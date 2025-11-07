@@ -158,6 +158,8 @@
 				TargetAttributes = {
 					FF0000000000000000000001 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
