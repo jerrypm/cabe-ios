@@ -37,29 +37,33 @@ Aplikasi iOS untuk membantu Anda merawat tanaman cabe dengan fitur pengingat pen
 
 ```
 cabe-ios/
-├── AppDelegate.swift              # App lifecycle
-├── SceneDelegate.swift            # Scene lifecycle
-├── Info.plist                     # App configuration
-│
-├── Models/
-│   ├── WateringSchedule.swift    # Model untuk jadwal penyiraman
-│   └── PlantTip.swift             # Model untuk tips perawatan
-│
-├── Managers/
-│   ├── NotificationManager.swift # Mengelola notifikasi lokal
-│   ├── TipsSearchManager.swift   # Mencari dan mengelola tips
-│   └── DataManager.swift          # Persistence data
-│
-├── ViewControllers/
-│   ├── MainViewController.swift           # Tab bar controller
-│   ├── ScheduleViewController.swift       # Daftar jadwal
-│   ├── AddScheduleViewController.swift    # Tambah/edit jadwal
-│   ├── TipsViewController.swift           # Browse tips
-│   └── TipDetailViewController.swift      # Detail tips
-│
-└── Views/
-    ├── ScheduleCell.swift         # Custom cell untuk jadwal
-    └── TipCell.swift              # Custom cell untuk tips
+├── CabeCare.xcodeproj/            # Xcode project file
+├── CabeCare/                      # Source code folder
+│   ├── AppDelegate.swift              # App lifecycle
+│   ├── SceneDelegate.swift            # Scene lifecycle
+│   ├── Info.plist                     # App configuration
+│   ├── Assets.xcassets/               # App icons and assets
+│   │
+│   ├── Models/
+│   │   ├── WateringSchedule.swift    # Model untuk jadwal penyiraman
+│   │   └── PlantTip.swift             # Model untuk tips perawatan
+│   │
+│   ├── Managers/
+│   │   ├── NotificationManager.swift # Mengelola notifikasi lokal
+│   │   ├── TipsSearchManager.swift   # Mencari dan mengelola tips
+│   │   └── DataManager.swift          # Persistence data
+│   │
+│   ├── ViewControllers/
+│   │   ├── MainViewController.swift           # Tab bar controller
+│   │   ├── ScheduleViewController.swift       # Daftar jadwal
+│   │   ├── AddScheduleViewController.swift    # Tambah/edit jadwal
+│   │   ├── TipsViewController.swift           # Browse tips
+│   │   └── TipDetailViewController.swift      # Detail tips
+│   │
+│   └── Views/
+│       ├── ScheduleCell.swift         # Custom cell untuk jadwal
+│       └── TipCell.swift              # Custom cell untuk tips
+└── README.md
 ```
 
 ## 🚀 Cara Menggunakan
@@ -74,12 +78,18 @@ cabe-ios/
 
 2. **Buka dengan Xcode**
    - Buka Xcode
-   - File → Open → Pilih folder `cabe-ios`
-   - Atau buat project baru dan copy semua file ke project
+   - File → Open
+   - Navigasi ke folder `cabe-ios`
+   - **Pilih file `CabeCare.xcodeproj`** (bukan folder CabeCare)
+   - Klik "Open"
 
 3. **Build dan Run**
-   - Pilih simulator atau device
-   - Tekan Cmd+R atau klik tombol Play
+   - Pastikan scheme "CabeCare" terpilih
+   - Pilih simulator (iPhone 14, 15, dll) atau device fisik
+   - Tekan **Cmd+R** atau klik tombol Play (▶︎)
+   - Aplikasi akan build dan running di simulator
+
+**Catatan**: Saat pertama kali running, Anda akan diminta izin notifikasi. Tap "Allow" untuk mengaktifkan fitur pengingat penyiraman.
 
 ### Menggunakan Aplikasi
 
