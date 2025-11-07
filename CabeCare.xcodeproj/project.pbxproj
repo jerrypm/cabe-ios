@@ -7,40 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA0000000000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000001 /* AppDelegate.swift */; };
-		AA0000000000000000000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000002 /* SceneDelegate.swift */; };
-		AA0000000000000000000003 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000003 /* MainViewController.swift */; };
-		AA0000000000000000000004 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000004 /* ScheduleViewController.swift */; };
-		AA0000000000000000000005 /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000005 /* AddScheduleViewController.swift */; };
-		AA0000000000000000000006 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000006 /* TipsViewController.swift */; };
-		AA0000000000000000000007 /* TipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000007 /* TipDetailViewController.swift */; };
-		AA0000000000000000000008 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000008 /* ScheduleCell.swift */; };
-		AA0000000000000000000009 /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000009 /* TipCell.swift */; };
-		AA0000000000000000000010 /* WateringSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000010 /* WateringSchedule.swift */; };
-		AA0000000000000000000011 /* PlantTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000011 /* PlantTip.swift */; };
-		AA0000000000000000000012 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000012 /* NotificationManager.swift */; };
-		AA0000000000000000000013 /* TipsSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000013 /* TipsSearchManager.swift */; };
-		AA0000000000000000000014 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000014 /* DataManager.swift */; };
-		AA0000000000000000000015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB0000000000000000000015 /* Assets.xcassets */; };
+		1302ED9C2EBDFE0600B0FECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1302ED7F2EBDFE0600B0FECF /* Assets.xcassets */; };
+		1302ED9E2EBDFE0600B0FECF /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED842EBDFE0600B0FECF /* ScheduleCell.swift */; };
+		1302ED9F2EBDFE0600B0FECF /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED852EBDFE0600B0FECF /* TipCell.swift */; };
+		1302EDA02EBDFE0600B0FECF /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED8F2EBDFE0600B0FECF /* MainRouter.swift */; };
+		1302EDA12EBDFE0600B0FECF /* WateringSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED892EBDFE0600B0FECF /* WateringSchedule.swift */; };
+		1302EDA22EBDFE0600B0FECF /* ScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED942EBDFE0600B0FECF /* ScheduleRouter.swift */; };
+		1302EDA32EBDFE0600B0FECF /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED952EBDFE0600B0FECF /* ScheduleView.swift */; };
+		1302EDA42EBDFE0600B0FECF /* AddScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED8C2EBDFE0600B0FECF /* AddScheduleRouter.swift */; };
+		1302EDA52EBDFE0600B0FECF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED802EBDFE0600B0FECF /* DataManager.swift */; };
+		1302EDA62EBDFE0600B0FECF /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED8D2EBDFE0600B0FECF /* AddScheduleViewController.swift */; };
+		1302EDA72EBDFE0600B0FECF /* ScheduleContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED912EBDFE0600B0FECF /* ScheduleContract.swift */; };
+		1302EDA82EBDFE0600B0FECF /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED992EBDFE0600B0FECF /* TipsViewController.swift */; };
+		1302EDA92EBDFE0600B0FECF /* TipsSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED822EBDFE0600B0FECF /* TipsSearchManager.swift */; };
+		1302EDAA2EBDFE0600B0FECF /* SchedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED932EBDFE0600B0FECF /* SchedulePresenter.swift */; };
+		1302EDAB2EBDFE0600B0FECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED7C2EBDFE0600B0FECF /* AppDelegate.swift */; };
+		1302EDAC2EBDFE0600B0FECF /* PlantTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED882EBDFE0600B0FECF /* PlantTip.swift */; };
+		1302EDAD2EBDFE0600B0FECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED7D2EBDFE0600B0FECF /* SceneDelegate.swift */; };
+		1302EDAE2EBDFE0600B0FECF /* TipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED972EBDFE0600B0FECF /* TipDetailViewController.swift */; };
+		1302EDAF2EBDFE0600B0FECF /* ScheduleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED922EBDFE0600B0FECF /* ScheduleInteractor.swift */; };
+		1302EDB02EBDFE0600B0FECF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED812EBDFE0600B0FECF /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB0000000000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB0000000000000000000002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BB0000000000000000000003 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BB0000000000000000000004 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		BB0000000000000000000005 /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
-		BB0000000000000000000006 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
-		BB0000000000000000000007 /* TipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetailViewController.swift; sourceTree = "<group>"; };
-		BB0000000000000000000008 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
-		BB0000000000000000000009 /* TipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
-		BB0000000000000000000010 /* WateringSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSchedule.swift; sourceTree = "<group>"; };
-		BB0000000000000000000011 /* PlantTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTip.swift; sourceTree = "<group>"; };
-		BB0000000000000000000012 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		BB0000000000000000000013 /* TipsSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsSearchManager.swift; sourceTree = "<group>"; };
-		BB0000000000000000000014 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		BB0000000000000000000015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BB0000000000000000000016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1302ED7C2EBDFE0600B0FECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1302ED7D2EBDFE0600B0FECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1302ED7F2EBDFE0600B0FECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1302ED802EBDFE0600B0FECF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1302ED812EBDFE0600B0FECF /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		1302ED822EBDFE0600B0FECF /* TipsSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsSearchManager.swift; sourceTree = "<group>"; };
+		1302ED842EBDFE0600B0FECF /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		1302ED852EBDFE0600B0FECF /* TipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
+		1302ED882EBDFE0600B0FECF /* PlantTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTip.swift; sourceTree = "<group>"; };
+		1302ED892EBDFE0600B0FECF /* WateringSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSchedule.swift; sourceTree = "<group>"; };
+		1302ED8B2EBDFE0600B0FECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1302ED8C2EBDFE0600B0FECF /* AddScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleRouter.swift; sourceTree = "<group>"; };
+		1302ED8D2EBDFE0600B0FECF /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
+		1302ED8F2EBDFE0600B0FECF /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		1302ED912EBDFE0600B0FECF /* ScheduleContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleContract.swift; sourceTree = "<group>"; };
+		1302ED922EBDFE0600B0FECF /* ScheduleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleInteractor.swift; sourceTree = "<group>"; };
+		1302ED932EBDFE0600B0FECF /* SchedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePresenter.swift; sourceTree = "<group>"; };
+		1302ED942EBDFE0600B0FECF /* ScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRouter.swift; sourceTree = "<group>"; };
+		1302ED952EBDFE0600B0FECF /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		1302ED972EBDFE0600B0FECF /* TipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetailViewController.swift; sourceTree = "<group>"; };
+		1302ED992EBDFE0600B0FECF /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		CC0000000000000000000001 /* CabeCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CabeCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,6 +65,109 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1302ED7E2EBDFE0600B0FECF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED7C2EBDFE0600B0FECF /* AppDelegate.swift */,
+				1302ED7D2EBDFE0600B0FECF /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1302ED832EBDFE0600B0FECF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED802EBDFE0600B0FECF /* DataManager.swift */,
+				1302ED812EBDFE0600B0FECF /* NotificationManager.swift */,
+				1302ED822EBDFE0600B0FECF /* TipsSearchManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1302ED862EBDFE0600B0FECF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED842EBDFE0600B0FECF /* ScheduleCell.swift */,
+				1302ED852EBDFE0600B0FECF /* TipCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1302ED872EBDFE0600B0FECF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED832EBDFE0600B0FECF /* Managers */,
+				1302ED862EBDFE0600B0FECF /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1302ED8A2EBDFE0600B0FECF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED882EBDFE0600B0FECF /* PlantTip.swift */,
+				1302ED892EBDFE0600B0FECF /* WateringSchedule.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		1302ED8E2EBDFE0600B0FECF /* AddSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED8C2EBDFE0600B0FECF /* AddScheduleRouter.swift */,
+				1302ED8D2EBDFE0600B0FECF /* AddScheduleViewController.swift */,
+			);
+			path = AddSchedule;
+			sourceTree = "<group>";
+		};
+		1302ED902EBDFE0600B0FECF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED8F2EBDFE0600B0FECF /* MainRouter.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1302ED962EBDFE0600B0FECF /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED912EBDFE0600B0FECF /* ScheduleContract.swift */,
+				1302ED922EBDFE0600B0FECF /* ScheduleInteractor.swift */,
+				1302ED932EBDFE0600B0FECF /* SchedulePresenter.swift */,
+				1302ED942EBDFE0600B0FECF /* ScheduleRouter.swift */,
+				1302ED952EBDFE0600B0FECF /* ScheduleView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		1302ED982EBDFE0600B0FECF /* TipDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED972EBDFE0600B0FECF /* TipDetailViewController.swift */,
+			);
+			path = TipDetail;
+			sourceTree = "<group>";
+		};
+		1302ED9A2EBDFE0600B0FECF /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED992EBDFE0600B0FECF /* TipsViewController.swift */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		1302ED9B2EBDFE0600B0FECF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1302ED8E2EBDFE0600B0FECF /* AddSchedule */,
+				1302ED902EBDFE0600B0FECF /* Main */,
+				1302ED962EBDFE0600B0FECF /* Schedule */,
+				1302ED982EBDFE0600B0FECF /* TipDetail */,
+				1302ED9A2EBDFE0600B0FECF /* Tips */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		EE0000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +179,12 @@
 		EE0000000000000000000002 /* CabeCare */ = {
 			isa = PBXGroup;
 			children = (
-				BB0000000000000000000001 /* AppDelegate.swift */,
-				BB0000000000000000000002 /* SceneDelegate.swift */,
-				EE0000000000000000000004 /* ViewControllers */,
-				EE0000000000000000000005 /* Views */,
-				EE0000000000000000000006 /* Models */,
-				EE0000000000000000000007 /* Managers */,
-				BB0000000000000000000015 /* Assets.xcassets */,
-				BB0000000000000000000016 /* Info.plist */,
+				1302ED8B2EBDFE0600B0FECF /* Info.plist */,
+				1302ED7F2EBDFE0600B0FECF /* Assets.xcassets */,
+				1302ED7E2EBDFE0600B0FECF /* App */,
+				1302ED872EBDFE0600B0FECF /* Common */,
+				1302ED8A2EBDFE0600B0FECF /* Entities */,
+				1302ED9B2EBDFE0600B0FECF /* Modules */,
 			);
 			path = CabeCare;
 			sourceTree = "<group>";
@@ -84,46 +195,6 @@
 				CC0000000000000000000001 /* CabeCare.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		EE0000000000000000000004 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				BB0000000000000000000003 /* MainViewController.swift */,
-				BB0000000000000000000004 /* ScheduleViewController.swift */,
-				BB0000000000000000000005 /* AddScheduleViewController.swift */,
-				BB0000000000000000000006 /* TipsViewController.swift */,
-				BB0000000000000000000007 /* TipDetailViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		EE0000000000000000000005 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BB0000000000000000000008 /* ScheduleCell.swift */,
-				BB0000000000000000000009 /* TipCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		EE0000000000000000000006 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BB0000000000000000000010 /* WateringSchedule.swift */,
-				BB0000000000000000000011 /* PlantTip.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		EE0000000000000000000007 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				BB0000000000000000000012 /* NotificationManager.swift */,
-				BB0000000000000000000013 /* TipsSearchManager.swift */,
-				BB0000000000000000000014 /* DataManager.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,7 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0000000000000000000015 /* Assets.xcassets in Resources */,
+				1302ED9C2EBDFE0600B0FECF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,20 +268,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0000000000000000000001 /* AppDelegate.swift in Sources */,
-				AA0000000000000000000002 /* SceneDelegate.swift in Sources */,
-				AA0000000000000000000003 /* MainViewController.swift in Sources */,
-				AA0000000000000000000004 /* ScheduleViewController.swift in Sources */,
-				AA0000000000000000000005 /* AddScheduleViewController.swift in Sources */,
-				AA0000000000000000000006 /* TipsViewController.swift in Sources */,
-				AA0000000000000000000007 /* TipDetailViewController.swift in Sources */,
-				AA0000000000000000000008 /* ScheduleCell.swift in Sources */,
-				AA0000000000000000000009 /* TipCell.swift in Sources */,
-				AA0000000000000000000010 /* WateringSchedule.swift in Sources */,
-				AA0000000000000000000011 /* PlantTip.swift in Sources */,
-				AA0000000000000000000012 /* NotificationManager.swift in Sources */,
-				AA0000000000000000000013 /* TipsSearchManager.swift in Sources */,
-				AA0000000000000000000014 /* DataManager.swift in Sources */,
+				1302ED9E2EBDFE0600B0FECF /* ScheduleCell.swift in Sources */,
+				1302ED9F2EBDFE0600B0FECF /* TipCell.swift in Sources */,
+				1302EDA02EBDFE0600B0FECF /* MainRouter.swift in Sources */,
+				1302EDA12EBDFE0600B0FECF /* WateringSchedule.swift in Sources */,
+				1302EDA22EBDFE0600B0FECF /* ScheduleRouter.swift in Sources */,
+				1302EDA32EBDFE0600B0FECF /* ScheduleView.swift in Sources */,
+				1302EDA42EBDFE0600B0FECF /* AddScheduleRouter.swift in Sources */,
+				1302EDA52EBDFE0600B0FECF /* DataManager.swift in Sources */,
+				1302EDA62EBDFE0600B0FECF /* AddScheduleViewController.swift in Sources */,
+				1302EDA72EBDFE0600B0FECF /* ScheduleContract.swift in Sources */,
+				1302EDA82EBDFE0600B0FECF /* TipsViewController.swift in Sources */,
+				1302EDA92EBDFE0600B0FECF /* TipsSearchManager.swift in Sources */,
+				1302EDAA2EBDFE0600B0FECF /* SchedulePresenter.swift in Sources */,
+				1302EDAB2EBDFE0600B0FECF /* AppDelegate.swift in Sources */,
+				1302EDAC2EBDFE0600B0FECF /* PlantTip.swift in Sources */,
+				1302EDAD2EBDFE0600B0FECF /* SceneDelegate.swift in Sources */,
+				1302EDAE2EBDFE0600B0FECF /* TipDetailViewController.swift in Sources */,
+				1302EDAF2EBDFE0600B0FECF /* ScheduleInteractor.swift in Sources */,
+				1302EDB02EBDFE0600B0FECF /* NotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

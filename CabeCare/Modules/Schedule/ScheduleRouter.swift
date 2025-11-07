@@ -27,7 +27,7 @@ class ScheduleRouter: ScheduleRouterProtocol {
     func navigateToAddSchedule(from view: ScheduleViewProtocol?) {
         guard let viewController = view as? UIViewController else { return }
 
-        let addScheduleVC = AddScheduleRouter.createModule(schedule: nil, delegate: viewController as? AddScheduleDelegate)
+        let addScheduleVC = AddScheduleRouter.createModule(schedule: nil as WateringSchedule?, delegate: viewController as? AddScheduleDelegate)
         let navController = UINavigationController(rootViewController: addScheduleVC)
 
         viewController.present(navController, animated: true)
@@ -43,12 +43,7 @@ class ScheduleRouter: ScheduleRouterProtocol {
     }
 }
 
-// MARK: - AddScheduleDelegate (to be used by View)
-protocol AddScheduleDelegate: AnyObject {
-    func didAddSchedule(_ schedule: WateringSchedule)
-    func didUpdateSchedule(_ schedule: WateringSchedule)
-}
-
+// MARK: - AddScheduleDelegate Extension
 extension ScheduleView: AddScheduleDelegate {
     func didAddSchedule(_ schedule: WateringSchedule) {
         presenter?.viewWillAppear()
