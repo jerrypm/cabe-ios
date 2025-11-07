@@ -16,11 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
 
-        // Create and set root view controller
-        let mainViewController = MainViewController()
-        let navigationController = UINavigationController(rootViewController: mainViewController)
+        // Create root view controller using VIPER
+        let mainViewController = MainRouter.createModule()
 
-        window?.rootViewController = navigationController
+        window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
     }
 

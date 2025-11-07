@@ -1,16 +1,19 @@
 //
-//  ScheduleViewController.swift
+//  ScheduleView.swift
 //  CabeCare
 //
-//  Displays and manages watering schedules
+//  VIPER View for Schedule Module
 //
 
 import UIKit
 
-class ScheduleViewController: UIViewController {
+class ScheduleView: UIViewController {
+
+    var presenter: SchedulePresenterProtocol?
 
     private var schedules: [WateringSchedule] = []
 
+    // MARK: - UI Components
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.delegate = self
@@ -54,6 +57,7 @@ class ScheduleViewController: UIViewController {
         return view
     }()
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,16 +66,18 @@ class ScheduleViewController: UIViewController {
 
         setupNavigationBar()
         setupUI()
-        loadSchedules()
+
+        presenter?.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadSchedules()
+        presenter?.viewWillAppear()
     }
 
+    // MARK: - Setup
     private func setupNavigationBar() {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addScheduleTapped))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = addButton
     }
 
@@ -92,56 +98,34 @@ class ScheduleViewController: UIViewController {
         ])
     }
 
-    private func loadSchedules() {
-        schedules = DataManager.shared.loadSchedules()
+    // MARK: - Actions
+    @objc private func addTapped() {
+        presenter?.didTapAddSchedule()
+    }
+}
+
+// MARK: - ScheduleViewProtocol
+extension ScheduleView: ScheduleViewProtocol {
+    func showSchedules(_ schedules: [WateringSchedule]) {
+        self.schedules = schedules
         tableView.reloadData()
-        updateEmptyState()
     }
 
-    private func updateEmptyState() {
-        emptyStateView.isHidden = !schedules.isEmpty
+    func showEmptyState() {
+        emptyStateView.isHidden = false
     }
 
-    @objc private func addScheduleTapped() {
-        let addVC = AddScheduleViewController()
-        addVC.delegate = self
-        let navController = UINavigationController(rootViewController: addVC)
-        present(navController, animated: true)
+    func hideEmptyState() {
+        emptyStateView.isHidden = true
     }
 
-    private func deleteSchedule(at indexPath: IndexPath) {
-        let schedule = schedules[indexPath.row]
-
-        // Cancel notifications
-        NotificationManager.shared.cancelWateringNotification(for: schedule)
-
-        // Delete from storage
-        DataManager.shared.deleteSchedule(schedule)
-
-        // Update UI
-        schedules.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
-        updateEmptyState()
-    }
-
-    private func toggleSchedule(at indexPath: IndexPath) {
-        var schedule = schedules[indexPath.row]
-        schedule.isEnabled.toggle()
-
-        if schedule.isEnabled {
-            NotificationManager.shared.scheduleWateringNotification(for: schedule)
-        } else {
-            NotificationManager.shared.cancelWateringNotification(for: schedule)
-        }
-
-        DataManager.shared.updateSchedule(schedule)
-        schedules[indexPath.row] = schedule
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+    func reloadData() {
+        tableView.reloadData()
     }
 }
 
 // MARK: - UITableViewDataSource
-extension ScheduleViewController: UITableViewDataSource {
+extension ScheduleView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return schedules.count
     }
@@ -151,28 +135,23 @@ extension ScheduleViewController: UITableViewDataSource {
         let schedule = schedules[indexPath.row]
         cell.configure(with: schedule)
         cell.switchToggled = { [weak self] isOn in
-            self?.toggleSchedule(at: indexPath)
+            self?.presenter?.didToggleSchedule(at: indexPath.row, isEnabled: isOn)
         }
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
-extension ScheduleViewController: UITableViewDelegate {
+extension ScheduleView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let schedule = schedules[indexPath.row]
-
-        let addVC = AddScheduleViewController()
-        addVC.scheduleToEdit = schedule
-        addVC.delegate = self
-        let navController = UINavigationController(rootViewController: addVC)
-        present(navController, animated: true)
+        presenter?.didSelectSchedule(schedule)
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Hapus") { [weak self] _, _, completion in
-            self?.deleteSchedule(at: indexPath)
+            self?.presenter?.didDeleteSchedule(at: indexPath.row)
             completion(true)
         }
         deleteAction.image = UIImage(systemName: "trash")
@@ -182,16 +161,5 @@ extension ScheduleViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
-    }
-}
-
-// MARK: - AddScheduleDelegate
-extension ScheduleViewController: AddScheduleDelegate {
-    func didAddSchedule(_ schedule: WateringSchedule) {
-        loadSchedules()
-    }
-
-    func didUpdateSchedule(_ schedule: WateringSchedule) {
-        loadSchedules()
     }
 }
