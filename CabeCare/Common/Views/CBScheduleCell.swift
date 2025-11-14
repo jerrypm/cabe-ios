@@ -1,13 +1,14 @@
 //
-//  ScheduleCell.swift
+//  CBScheduleCell.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Custom cell for watering schedule
 //
 
 import UIKit
 
-class ScheduleCell: UITableViewCell {
+class CBScheduleCell: UITableViewCell {
 
     var switchToggled: ((Bool) -> Void)?
 
@@ -89,7 +90,7 @@ class ScheduleCell: UITableViewCell {
         ])
     }
 
-    func configure(with schedule: WateringSchedule) {
+    func configure(with schedule: CBWateringSchedule) {
         plantNameLabel.text = schedule.plantName
 
         let formatter = DateFormatter()

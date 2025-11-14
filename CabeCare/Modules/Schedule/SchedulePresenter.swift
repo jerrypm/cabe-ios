@@ -2,6 +2,7 @@
 //  SchedulePresenter.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  VIPER Presenter for Schedule Module
 //
 
@@ -12,7 +13,7 @@ class SchedulePresenter: SchedulePresenterProtocol {
     var interactor: ScheduleInteractorProtocol?
     var router: ScheduleRouterProtocol?
 
-    private var schedules: [WateringSchedule] = []
+    private var schedules: [CBWateringSchedule] = []
 
     func viewDidLoad() {
         interactor?.fetchSchedules()
@@ -26,7 +27,7 @@ class SchedulePresenter: SchedulePresenterProtocol {
         router?.navigateToAddSchedule(from: view)
     }
 
-    func didSelectSchedule(_ schedule: WateringSchedule) {
+    func didSelectSchedule(_ schedule: CBWateringSchedule) {
         router?.navigateToEditSchedule(schedule, from: view)
     }
 
@@ -45,7 +46,7 @@ class SchedulePresenter: SchedulePresenterProtocol {
 
 // MARK: - Interactor Output
 extension SchedulePresenter: ScheduleInteractorOutputProtocol {
-    func didFetchSchedules(_ schedules: [WateringSchedule]) {
+    func didFetchSchedules(_ schedules: [CBWateringSchedule]) {
         self.schedules = schedules
 
         if schedules.isEmpty {

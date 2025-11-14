@@ -2,6 +2,7 @@
 //  ScheduleView.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  VIPER View for Schedule Module
 //
 
@@ -11,14 +12,14 @@ class ScheduleView: UIViewController {
 
     var presenter: SchedulePresenterProtocol?
 
-    private var schedules: [WateringSchedule] = []
+    private var schedules: [CBWateringSchedule] = []
 
     // MARK: - UI Components
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.delegate = self
         table.dataSource = self
-        table.register(ScheduleCell.self, forCellReuseIdentifier: "ScheduleCell")
+        table.register(CBScheduleCell.self, forCellReuseIdentifier: "CBScheduleCell")
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -106,7 +107,7 @@ class ScheduleView: UIViewController {
 
 // MARK: - ScheduleViewProtocol
 extension ScheduleView: ScheduleViewProtocol {
-    func showSchedules(_ schedules: [WateringSchedule]) {
+    func showSchedules(_ schedules: [CBWateringSchedule]) {
         self.schedules = schedules
         tableView.reloadData()
     }
@@ -131,7 +132,7 @@ extension ScheduleView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! ScheduleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CBScheduleCell", for: indexPath) as! CBScheduleCell
         let schedule = schedules[indexPath.row]
         cell.configure(with: schedule)
         cell.switchToggled = { [weak self] isOn in

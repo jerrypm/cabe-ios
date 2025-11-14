@@ -1,13 +1,14 @@
 //
-//  TipCell.swift
+//  CBTipCell.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Custom cell for plant care tip
 //
 
 import UIKit
 
-class TipCell: UITableViewCell {
+class CBTipCell: UITableViewCell {
 
     private let iconLabel: UILabel = {
         let label = UILabel()
@@ -91,7 +92,7 @@ class TipCell: UITableViewCell {
         ])
     }
 
-    func configure(with tip: PlantTip) {
+    func configure(with tip: CBPlantTip) {
         titleLabel.text = tip.title
         contentLabel.text = tip.content
 

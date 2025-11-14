@@ -2,6 +2,7 @@
 //  ScheduleInteractor.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  VIPER Interactor for Schedule Module
 //
 
@@ -10,15 +11,15 @@ import Foundation
 class ScheduleInteractor: ScheduleInteractorProtocol {
     weak var presenter: ScheduleInteractorOutputProtocol?
 
-    private let dataManager = DataManager.shared
-    private let notificationManager = NotificationManager.shared
+    private let dataManager = CBDataManager.shared
+    private let notificationManager = CBNotificationManager.shared
 
     func fetchSchedules() {
         let schedules = dataManager.loadSchedules()
         presenter?.didFetchSchedules(schedules)
     }
 
-    func toggleSchedule(_ schedule: WateringSchedule, isEnabled: Bool) {
+    func toggleSchedule(_ schedule: CBWateringSchedule, isEnabled: Bool) {
         var updatedSchedule = schedule
         updatedSchedule.isEnabled = isEnabled
 
@@ -32,7 +33,7 @@ class ScheduleInteractor: ScheduleInteractorProtocol {
         presenter?.didUpdateSchedule()
     }
 
-    func deleteSchedule(_ schedule: WateringSchedule) {
+    func deleteSchedule(_ schedule: CBWateringSchedule) {
         notificationManager.cancelWateringNotification(for: schedule)
         dataManager.deleteSchedule(schedule)
         presenter?.didDeleteSchedule()

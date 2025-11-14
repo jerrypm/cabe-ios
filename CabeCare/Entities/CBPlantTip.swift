@@ -1,13 +1,14 @@
 //
-//  PlantTip.swift
+//  CBPlantTip.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Model for plant care tips
 //
 
 import Foundation
 
-struct PlantTip: Codable {
+struct CBPlantTip: Codable {
     let id: UUID
     var title: String
     var content: String

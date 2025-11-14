@@ -8,38 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		1302ED9C2EBDFE0600B0FECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1302ED7F2EBDFE0600B0FECF /* Assets.xcassets */; };
-		1302ED9E2EBDFE0600B0FECF /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED842EBDFE0600B0FECF /* ScheduleCell.swift */; };
-		1302ED9F2EBDFE0600B0FECF /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED852EBDFE0600B0FECF /* TipCell.swift */; };
 		1302EDA02EBDFE0600B0FECF /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED8F2EBDFE0600B0FECF /* MainRouter.swift */; };
-		1302EDA12EBDFE0600B0FECF /* WateringSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED892EBDFE0600B0FECF /* WateringSchedule.swift */; };
 		1302EDA22EBDFE0600B0FECF /* ScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED942EBDFE0600B0FECF /* ScheduleRouter.swift */; };
 		1302EDA32EBDFE0600B0FECF /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED952EBDFE0600B0FECF /* ScheduleView.swift */; };
 		1302EDA42EBDFE0600B0FECF /* AddScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED8C2EBDFE0600B0FECF /* AddScheduleRouter.swift */; };
-		1302EDA52EBDFE0600B0FECF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED802EBDFE0600B0FECF /* DataManager.swift */; };
 		1302EDA62EBDFE0600B0FECF /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED8D2EBDFE0600B0FECF /* AddScheduleViewController.swift */; };
 		1302EDA72EBDFE0600B0FECF /* ScheduleContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED912EBDFE0600B0FECF /* ScheduleContract.swift */; };
 		1302EDA82EBDFE0600B0FECF /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED992EBDFE0600B0FECF /* TipsViewController.swift */; };
-		1302EDA92EBDFE0600B0FECF /* TipsSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED822EBDFE0600B0FECF /* TipsSearchManager.swift */; };
 		1302EDAA2EBDFE0600B0FECF /* SchedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED932EBDFE0600B0FECF /* SchedulePresenter.swift */; };
 		1302EDAB2EBDFE0600B0FECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED7C2EBDFE0600B0FECF /* AppDelegate.swift */; };
-		1302EDAC2EBDFE0600B0FECF /* PlantTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED882EBDFE0600B0FECF /* PlantTip.swift */; };
 		1302EDAD2EBDFE0600B0FECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED7D2EBDFE0600B0FECF /* SceneDelegate.swift */; };
 		1302EDAE2EBDFE0600B0FECF /* TipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED972EBDFE0600B0FECF /* TipDetailViewController.swift */; };
 		1302EDAF2EBDFE0600B0FECF /* ScheduleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED922EBDFE0600B0FECF /* ScheduleInteractor.swift */; };
-		1302EDB02EBDFE0600B0FECF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1302ED812EBDFE0600B0FECF /* NotificationManager.swift */; };
+		1344795B2EC736C8008B16CC /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479582EC736C8008B16CC /* TabBarRouter.swift */; };
+		1344795C2EC736C8008B16CC /* TabBarContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479552EC736C8008B16CC /* TabBarContract.swift */; };
+		1344795D2EC736C8008B16CC /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479562EC736C8008B16CC /* TabBarInteractor.swift */; };
+		1344795E2EC736C8008B16CC /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479592EC736C8008B16CC /* TabBarView.swift */; };
+		1344795F2EC736C8008B16CC /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479572EC736C8008B16CC /* TabBarPresenter.swift */; };
+		1392E8192EC77BA7003B5E03 /* CBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8172EC77BA7003B5E03 /* CBTabBarButton.swift */; };
+		1392E81A2EC77BA7003B5E03 /* CBTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8182EC77BA7003B5E03 /* CBTabBarView.swift */; };
+		1392E81C2EC77BC2003B5E03 /* CBDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E81B2EC77BC2003B5E03 /* CBDataManager.swift */; };
+		1392E81E2EC77C01003B5E03 /* CBNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E81D2EC77C01003B5E03 /* CBNotificationManager.swift */; };
+		1392E8202EC77C0E003B5E03 /* CBTipsSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E81F2EC77C0E003B5E03 /* CBTipsSearchManager.swift */; };
+		1392E8222EC77C31003B5E03 /* CBScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8212EC77C31003B5E03 /* CBScheduleCell.swift */; };
+		1392E8242EC77C37003B5E03 /* CBTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8232EC77C37003B5E03 /* CBTipCell.swift */; };
+		1392E8262EC77C54003B5E03 /* CBPlantTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8252EC77C54003B5E03 /* CBPlantTip.swift */; };
+		1392E8282EC77C5B003B5E03 /* CBWateringSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8272EC77C5B003B5E03 /* CBWateringSchedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1302ED7C2EBDFE0600B0FECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1302ED7D2EBDFE0600B0FECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1302ED7F2EBDFE0600B0FECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1302ED802EBDFE0600B0FECF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		1302ED812EBDFE0600B0FECF /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		1302ED822EBDFE0600B0FECF /* TipsSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsSearchManager.swift; sourceTree = "<group>"; };
-		1302ED842EBDFE0600B0FECF /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
-		1302ED852EBDFE0600B0FECF /* TipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
-		1302ED882EBDFE0600B0FECF /* PlantTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantTip.swift; sourceTree = "<group>"; };
-		1302ED892EBDFE0600B0FECF /* WateringSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringSchedule.swift; sourceTree = "<group>"; };
 		1302ED8B2EBDFE0600B0FECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1302ED8C2EBDFE0600B0FECF /* AddScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleRouter.swift; sourceTree = "<group>"; };
 		1302ED8D2EBDFE0600B0FECF /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +51,20 @@
 		1302ED952EBDFE0600B0FECF /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		1302ED972EBDFE0600B0FECF /* TipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetailViewController.swift; sourceTree = "<group>"; };
 		1302ED992EBDFE0600B0FECF /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		134479552EC736C8008B16CC /* TabBarContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContract.swift; sourceTree = "<group>"; };
+		134479562EC736C8008B16CC /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
+		134479572EC736C8008B16CC /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		134479582EC736C8008B16CC /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		134479592EC736C8008B16CC /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		1392E8172EC77BA7003B5E03 /* CBTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarButton.swift; sourceTree = "<group>"; };
+		1392E8182EC77BA7003B5E03 /* CBTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarView.swift; sourceTree = "<group>"; };
+		1392E81B2EC77BC2003B5E03 /* CBDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDataManager.swift; sourceTree = "<group>"; };
+		1392E81D2EC77C01003B5E03 /* CBNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBNotificationManager.swift; sourceTree = "<group>"; };
+		1392E81F2EC77C0E003B5E03 /* CBTipsSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTipsSearchManager.swift; sourceTree = "<group>"; };
+		1392E8212EC77C31003B5E03 /* CBScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBScheduleCell.swift; sourceTree = "<group>"; };
+		1392E8232EC77C37003B5E03 /* CBTipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTipCell.swift; sourceTree = "<group>"; };
+		1392E8252EC77C54003B5E03 /* CBPlantTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPlantTip.swift; sourceTree = "<group>"; };
+		1392E8272EC77C5B003B5E03 /* CBWateringSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWateringSchedule.swift; sourceTree = "<group>"; };
 		CC0000000000000000000001 /* CabeCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CabeCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,9 +91,9 @@
 		1302ED832EBDFE0600B0FECF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				1302ED802EBDFE0600B0FECF /* DataManager.swift */,
-				1302ED812EBDFE0600B0FECF /* NotificationManager.swift */,
-				1302ED822EBDFE0600B0FECF /* TipsSearchManager.swift */,
+				1392E81B2EC77BC2003B5E03 /* CBDataManager.swift */,
+				1392E81D2EC77C01003B5E03 /* CBNotificationManager.swift */,
+				1392E81F2EC77C0E003B5E03 /* CBTipsSearchManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -87,8 +101,10 @@
 		1302ED862EBDFE0600B0FECF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1302ED842EBDFE0600B0FECF /* ScheduleCell.swift */,
-				1302ED852EBDFE0600B0FECF /* TipCell.swift */,
+				1392E8212EC77C31003B5E03 /* CBScheduleCell.swift */,
+				1392E8172EC77BA7003B5E03 /* CBTabBarButton.swift */,
+				1392E8182EC77BA7003B5E03 /* CBTabBarView.swift */,
+				1392E8232EC77C37003B5E03 /* CBTipCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,8 +121,8 @@
 		1302ED8A2EBDFE0600B0FECF /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				1302ED882EBDFE0600B0FECF /* PlantTip.swift */,
-				1302ED892EBDFE0600B0FECF /* WateringSchedule.swift */,
+				1392E8252EC77C54003B5E03 /* CBPlantTip.swift */,
+				1392E8272EC77C5B003B5E03 /* CBWateringSchedule.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -162,10 +178,23 @@
 				1302ED8E2EBDFE0600B0FECF /* AddSchedule */,
 				1302ED902EBDFE0600B0FECF /* Main */,
 				1302ED962EBDFE0600B0FECF /* Schedule */,
+				1344795A2EC736C8008B16CC /* TabBar */,
 				1302ED982EBDFE0600B0FECF /* TipDetail */,
 				1302ED9A2EBDFE0600B0FECF /* Tips */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		1344795A2EC736C8008B16CC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				134479552EC736C8008B16CC /* TabBarContract.swift */,
+				134479562EC736C8008B16CC /* TabBarInteractor.swift */,
+				134479572EC736C8008B16CC /* TabBarPresenter.swift */,
+				134479582EC736C8008B16CC /* TabBarRouter.swift */,
+				134479592EC736C8008B16CC /* TabBarView.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		EE0000000000000000000001 = {
@@ -268,25 +297,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1302ED9E2EBDFE0600B0FECF /* ScheduleCell.swift in Sources */,
-				1302ED9F2EBDFE0600B0FECF /* TipCell.swift in Sources */,
+				1392E8202EC77C0E003B5E03 /* CBTipsSearchManager.swift in Sources */,
+				1392E81C2EC77BC2003B5E03 /* CBDataManager.swift in Sources */,
 				1302EDA02EBDFE0600B0FECF /* MainRouter.swift in Sources */,
-				1302EDA12EBDFE0600B0FECF /* WateringSchedule.swift in Sources */,
 				1302EDA22EBDFE0600B0FECF /* ScheduleRouter.swift in Sources */,
 				1302EDA32EBDFE0600B0FECF /* ScheduleView.swift in Sources */,
 				1302EDA42EBDFE0600B0FECF /* AddScheduleRouter.swift in Sources */,
-				1302EDA52EBDFE0600B0FECF /* DataManager.swift in Sources */,
+				1344795B2EC736C8008B16CC /* TabBarRouter.swift in Sources */,
+				1344795C2EC736C8008B16CC /* TabBarContract.swift in Sources */,
+				1344795D2EC736C8008B16CC /* TabBarInteractor.swift in Sources */,
+				1344795E2EC736C8008B16CC /* TabBarView.swift in Sources */,
+				1344795F2EC736C8008B16CC /* TabBarPresenter.swift in Sources */,
+				1392E81E2EC77C01003B5E03 /* CBNotificationManager.swift in Sources */,
 				1302EDA62EBDFE0600B0FECF /* AddScheduleViewController.swift in Sources */,
+				1392E8192EC77BA7003B5E03 /* CBTabBarButton.swift in Sources */,
+				1392E81A2EC77BA7003B5E03 /* CBTabBarView.swift in Sources */,
 				1302EDA72EBDFE0600B0FECF /* ScheduleContract.swift in Sources */,
 				1302EDA82EBDFE0600B0FECF /* TipsViewController.swift in Sources */,
-				1302EDA92EBDFE0600B0FECF /* TipsSearchManager.swift in Sources */,
 				1302EDAA2EBDFE0600B0FECF /* SchedulePresenter.swift in Sources */,
 				1302EDAB2EBDFE0600B0FECF /* AppDelegate.swift in Sources */,
-				1302EDAC2EBDFE0600B0FECF /* PlantTip.swift in Sources */,
 				1302EDAD2EBDFE0600B0FECF /* SceneDelegate.swift in Sources */,
+				1392E8242EC77C37003B5E03 /* CBTipCell.swift in Sources */,
 				1302EDAE2EBDFE0600B0FECF /* TipDetailViewController.swift in Sources */,
+				1392E8222EC77C31003B5E03 /* CBScheduleCell.swift in Sources */,
 				1302EDAF2EBDFE0600B0FECF /* ScheduleInteractor.swift in Sources */,
-				1302EDB02EBDFE0600B0FECF /* NotificationManager.swift in Sources */,
+				1392E8282EC77C5B003B5E03 /* CBWateringSchedule.swift in Sources */,
+				1392E8262EC77C54003B5E03 /* CBPlantTip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

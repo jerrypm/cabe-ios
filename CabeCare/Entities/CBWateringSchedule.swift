@@ -1,13 +1,14 @@
 //
-//  WateringSchedule.swift
+//  CBWateringSchedule.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Model for watering schedule
 //
 
 import Foundation
 
-struct WateringSchedule: Codable {
+struct CBWateringSchedule: Codable {
     let id: UUID
     var plantName: String
     var wateringTime: Date

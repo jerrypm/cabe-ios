@@ -2,6 +2,7 @@
 //  TipDetailViewController.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Displays detailed view of a plant care tip
 //
 
@@ -9,7 +10,7 @@ import UIKit
 
 class TipDetailViewController: UIViewController {
 
-    private let tip: PlantTip
+    private let tip: CBPlantTip
 
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -72,7 +73,7 @@ class TipDetailViewController: UIViewController {
         return button
     }()
 
-    init(tip: PlantTip) {
+    init(tip: CBPlantTip) {
         self.tip = tip
         super.init(nibName: nil, bundle: nil)
     }

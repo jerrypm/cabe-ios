@@ -2,6 +2,7 @@
 //  ScheduleRouter.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  VIPER Router for Schedule Module
 //
 
@@ -27,13 +28,13 @@ class ScheduleRouter: ScheduleRouterProtocol {
     func navigateToAddSchedule(from view: ScheduleViewProtocol?) {
         guard let viewController = view as? UIViewController else { return }
 
-        let addScheduleVC = AddScheduleRouter.createModule(schedule: nil as WateringSchedule?, delegate: viewController as? AddScheduleDelegate)
+        let addScheduleVC = AddScheduleRouter.createModule(schedule: nil as CBWateringSchedule?, delegate: viewController as? AddScheduleDelegate)
         let navController = UINavigationController(rootViewController: addScheduleVC)
 
         viewController.present(navController, animated: true)
     }
 
-    func navigateToEditSchedule(_ schedule: WateringSchedule, from view: ScheduleViewProtocol?) {
+    func navigateToEditSchedule(_ schedule: CBWateringSchedule, from view: ScheduleViewProtocol?) {
         guard let viewController = view as? UIViewController else { return }
 
         let addScheduleVC = AddScheduleRouter.createModule(schedule: schedule, delegate: viewController as? AddScheduleDelegate)
@@ -45,11 +46,11 @@ class ScheduleRouter: ScheduleRouterProtocol {
 
 // MARK: - AddScheduleDelegate Extension
 extension ScheduleView: AddScheduleDelegate {
-    func didAddSchedule(_ schedule: WateringSchedule) {
+    func didAddSchedule(_ schedule: CBWateringSchedule) {
         presenter?.viewWillAppear()
     }
 
-    func didUpdateSchedule(_ schedule: WateringSchedule) {
+    func didUpdateSchedule(_ schedule: CBWateringSchedule) {
         presenter?.viewWillAppear()
     }
 }

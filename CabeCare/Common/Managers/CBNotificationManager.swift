@@ -1,20 +1,21 @@
 //
-//  NotificationManager.swift
+//  CBNotificationManager.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Manages local notifications for watering reminders
 //
 
 import Foundation
 import UserNotifications
 
-class NotificationManager {
-    static let shared = NotificationManager()
+class CBNotificationManager {
+    static let shared = CBNotificationManager()
 
     private init() {}
 
     // Schedule notification for watering reminder
-    func scheduleWateringNotification(for schedule: WateringSchedule) {
+    func scheduleWateringNotification(for schedule: CBWateringSchedule) {
         guard schedule.isEnabled else { return }
 
         let content = UNMutableNotificationContent()
@@ -73,7 +74,7 @@ class NotificationManager {
         }
     }
 
-    private func scheduleTwiceDailySecondNotification(for schedule: WateringSchedule, components: DateComponents) {
+    private func scheduleTwiceDailySecondNotification(for schedule: CBWateringSchedule, components: DateComponents) {
         let content = UNMutableNotificationContent()
         content.title = "🌶️ Waktunya Menyiram Cabe!"
         content.body = "Jangan lupa menyiram tanaman \(schedule.plantName) Anda (penyiraman ke-2)"
@@ -99,7 +100,7 @@ class NotificationManager {
     }
 
     // Cancel notification for a schedule
-    func cancelWateringNotification(for schedule: WateringSchedule) {
+    func cancelWateringNotification(for schedule: CBWateringSchedule) {
         let identifier = "watering-\(schedule.id.uuidString)"
         let secondIdentifier = "watering-twice-\(schedule.id.uuidString)"
 
@@ -108,7 +109,7 @@ class NotificationManager {
     }
 
     // Send immediate notification for tips
-    func sendTipNotification(tip: PlantTip) {
+    func sendTipNotification(tip: CBPlantTip) {
         let content = UNMutableNotificationContent()
         content.title = "💡 Tips Perawatan Cabe"
         content.body = tip.title

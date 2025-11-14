@@ -2,6 +2,7 @@
 //  TipsViewController.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Browse and search plant care tips
 //
 
@@ -9,8 +10,8 @@ import UIKit
 
 class TipsViewController: UIViewController {
 
-    private var allTips: [PlantTip] = []
-    private var displayedTips: [PlantTip] = []
+    private var allTips: [CBPlantTip] = []
+    private var displayedTips: [CBPlantTip] = []
 
     private let searchController: UISearchController = {
         let controller = UISearchController(searchResultsController: nil)
@@ -22,7 +23,7 @@ class TipsViewController: UIViewController {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.delegate = self
         table.dataSource = self
-        table.register(TipCell.self, forCellReuseIdentifier: "TipCell")
+        table.register(CBTipCell.self, forCellReuseIdentifier: "CBTipCell")
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -79,10 +80,10 @@ class TipsViewController: UIViewController {
 
     private func loadTips() {
         // Load predefined tips
-        allTips = TipsSearchManager.shared.getAllTips()
+        allTips = CBTipsSearchManager.shared.getAllTips()
 
         // Load saved tips from storage
-        let savedTips = DataManager.shared.loadTips()
+        let savedTips = CBDataManager.shared.loadTips()
 
         // Combine and remove duplicates
         for savedTip in savedTips {
@@ -117,7 +118,7 @@ class TipsViewController: UIViewController {
         present(loadingAlert, animated: true)
 
         // Search for tips
-        TipsSearchManager.shared.searchTips(query: query) { [weak self] tips in
+        CBTipsSearchManager.shared.searchTips(query: query) { [weak self] tips in
             guard let self = self else { return }
 
             // Dismiss loading alert
@@ -127,8 +128,8 @@ class TipsViewController: UIViewController {
                 } else {
                     // Save first tip and send notification
                     let firstTip = tips[0]
-                    DataManager.shared.addTip(firstTip)
-                    NotificationManager.shared.sendTipNotification(tip: firstTip)
+                    CBDataManager.shared.addTip(firstTip)
+                    CBNotificationManager.shared.sendTipNotification(tip: firstTip)
 
                     // Reload tips
                     self.loadTips()
@@ -166,7 +167,7 @@ extension TipsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TipCell", for: indexPath) as! TipCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CBTipCell", for: indexPath) as! CBTipCell
         let tip = displayedTips[indexPath.row]
         cell.configure(with: tip)
         return cell

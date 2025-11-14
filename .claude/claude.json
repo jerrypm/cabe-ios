@@ -1,0 +1,28 @@
+{
+  "name": "CabeCare iOS Project",
+  "description": "Plant care iOS application with VIPER Clean Architecture",
+  "rules": [
+    "ALWAYS follow VIPER Clean Architecture pattern for all modules",
+    "NEVER put multiple classes or structs in the same file - one class per file is MANDATORY",
+    "Split files into extensions when exceeding 200 lines using pattern: ClassName+Purpose.swift",
+    "All UI components must be in Common/Views/ directory with clear naming",
+    "Follow naming convention: View, Presenter, Interactor, Router, Entity, Contract",
+    "Use MARK comments for code organization in every file",
+    "Avoid property name conflicts when subclassing UIKit classes",
+    "Use dependency injection via Router.createModule() pattern",
+    "Keep business logic in Interactor, presentation logic in Presenter",
+    "Navigation must be handled by Router, not View",
+    "Always use weak references for delegates and protocols",
+    "Apply Clean Code principles: readable, maintainable, testable"
+  ],
+  "architecture": "VIPER",
+  "language": "Swift",
+  "platform": "iOS",
+  "conventions": {
+    "maxLinesPerFile": 200,
+    "fileExtensionPattern": "ClassName+Purpose.swift",
+    "oneClassPerFile": true,
+    "useMARKComments": true,
+    "accessControl": "private by default, internal for module, public for framework"
+  }
+}

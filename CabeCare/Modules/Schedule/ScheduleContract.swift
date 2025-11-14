@@ -2,6 +2,7 @@
 //  ScheduleContract.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  VIPER Contract for Schedule Module
 //
 
@@ -12,7 +13,7 @@ import UIKit
 protocol ScheduleViewProtocol: AnyObject {
     var presenter: SchedulePresenterProtocol? { get set }
 
-    func showSchedules(_ schedules: [WateringSchedule])
+    func showSchedules(_ schedules: [CBWateringSchedule])
     func showEmptyState()
     func hideEmptyState()
     func reloadData()
@@ -27,7 +28,7 @@ protocol SchedulePresenterProtocol: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
     func didTapAddSchedule()
-    func didSelectSchedule(_ schedule: WateringSchedule)
+    func didSelectSchedule(_ schedule: CBWateringSchedule)
     func didToggleSchedule(at index: Int, isEnabled: Bool)
     func didDeleteSchedule(at index: Int)
 }
@@ -37,13 +38,13 @@ protocol ScheduleInteractorProtocol: AnyObject {
     var presenter: ScheduleInteractorOutputProtocol? { get set }
 
     func fetchSchedules()
-    func toggleSchedule(_ schedule: WateringSchedule, isEnabled: Bool)
-    func deleteSchedule(_ schedule: WateringSchedule)
+    func toggleSchedule(_ schedule: CBWateringSchedule, isEnabled: Bool)
+    func deleteSchedule(_ schedule: CBWateringSchedule)
 }
 
 // MARK: - Interactor Output Protocol
 protocol ScheduleInteractorOutputProtocol: AnyObject {
-    func didFetchSchedules(_ schedules: [WateringSchedule])
+    func didFetchSchedules(_ schedules: [CBWateringSchedule])
     func didUpdateSchedule()
     func didDeleteSchedule()
     func didFailWithError(_ error: Error)
@@ -54,5 +55,5 @@ protocol ScheduleRouterProtocol: AnyObject {
     static func createModule() -> UIViewController
 
     func navigateToAddSchedule(from view: ScheduleViewProtocol?)
-    func navigateToEditSchedule(_ schedule: WateringSchedule, from view: ScheduleViewProtocol?)
+    func navigateToEditSchedule(_ schedule: CBWateringSchedule, from view: ScheduleViewProtocol?)
 }

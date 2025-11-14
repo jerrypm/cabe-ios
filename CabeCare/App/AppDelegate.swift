@@ -2,6 +2,7 @@
 //  AppDelegate.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Plant care app for chili peppers (cabe)
 //
 

@@ -2,20 +2,21 @@
 //  AddScheduleViewController.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Add or edit watering schedule
 //
 
 import UIKit
 
 protocol AddScheduleDelegate: AnyObject {
-    func didAddSchedule(_ schedule: WateringSchedule)
-    func didUpdateSchedule(_ schedule: WateringSchedule)
+    func didAddSchedule(_ schedule: CBWateringSchedule)
+    func didUpdateSchedule(_ schedule: CBWateringSchedule)
 }
 
 class AddScheduleViewController: UIViewController {
 
     weak var delegate: AddScheduleDelegate?
-    var scheduleToEdit: WateringSchedule?
+    var scheduleToEdit: CBWateringSchedule?
 
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
@@ -75,7 +76,7 @@ class AddScheduleViewController: UIViewController {
         return textField
     }()
 
-    private let intervals = WateringSchedule.RepeatInterval.allCases
+    private let intervals = CBWateringSchedule.RepeatInterval.allCases
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,7 +154,7 @@ class AddScheduleViewController: UIViewController {
         intervalPicker.dataSource = self
     }
 
-    private func populateFields(with schedule: WateringSchedule) {
+    private func populateFields(with schedule: CBWateringSchedule) {
         plantNameTextField.text = schedule.plantName
         timePicker.date = schedule.wateringTime
         notesTextField.text = schedule.notes
@@ -185,17 +186,17 @@ class AddScheduleViewController: UIViewController {
             updatedSchedule.notes = notes
 
             // Cancel old notifications
-            NotificationManager.shared.cancelWateringNotification(for: existingSchedule)
+            CBNotificationManager.shared.cancelWateringNotification(for: existingSchedule)
 
             // Schedule new notifications
-            NotificationManager.shared.scheduleWateringNotification(for: updatedSchedule)
+            CBNotificationManager.shared.scheduleWateringNotification(for: updatedSchedule)
 
             // Save
-            DataManager.shared.updateSchedule(updatedSchedule)
+            CBDataManager.shared.updateSchedule(updatedSchedule)
             delegate?.didUpdateSchedule(updatedSchedule)
         } else {
             // Create new schedule
-            let schedule = WateringSchedule(
+            let schedule = CBWateringSchedule(
                 plantName: plantName,
                 wateringTime: timePicker.date,
                 repeatInterval: selectedInterval,
@@ -203,10 +204,10 @@ class AddScheduleViewController: UIViewController {
             )
 
             // Schedule notifications
-            NotificationManager.shared.scheduleWateringNotification(for: schedule)
+            CBNotificationManager.shared.scheduleWateringNotification(for: schedule)
 
             // Save
-            DataManager.shared.addSchedule(schedule)
+            CBDataManager.shared.addSchedule(schedule)
             delegate?.didAddSchedule(schedule)
         }
 

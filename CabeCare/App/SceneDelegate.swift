@@ -2,6 +2,7 @@
 //  SceneDelegate.swift
 //  CabeCare
 //
+//  Created by Jeri Purnama Maulid on 14/11/25.
 //  Scene lifecycle management
 //
 
