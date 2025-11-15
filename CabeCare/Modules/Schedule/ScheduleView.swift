@@ -19,7 +19,7 @@ class ScheduleView: UIViewController {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.delegate = self
         table.dataSource = self
-        table.register(CBScheduleCell.self, forCellReuseIdentifier: "CBScheduleCell")
+        table.register(CBScheduleCell.self, forCellReuseIdentifier: ScheduleConstants.CellIdentifier.scheduleCell.value)
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -34,7 +34,7 @@ class ScheduleView: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         let label = UILabel()
-        label.text = "Belum ada jadwal penyiraman\nTap + untuk menambah"
+        label.text = ScheduleLK.emptyStateMessage.localized + "\nTap + untuk menambah"
         label.textAlignment = .center
         label.numberOfLines = 0
         label.textColor = .systemGray
@@ -62,7 +62,7 @@ class ScheduleView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "🌶️ Jadwal Penyiraman"
+        title = "🌶️ " + ScheduleLK.screenTitle.localized
         view.backgroundColor = .systemBackground
 
         setupNavigationBar()
@@ -132,7 +132,7 @@ extension ScheduleView: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CBScheduleCell", for: indexPath) as! CBScheduleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ScheduleConstants.CellIdentifier.scheduleCell.value, for: indexPath) as! CBScheduleCell
         let schedule = schedules[indexPath.row]
         cell.configure(with: schedule)
         cell.switchToggled = { [weak self] isOn in
@@ -151,11 +151,11 @@ extension ScheduleView: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Hapus") { [weak self] _, _, completion in
+        let deleteAction = UIContextualAction(style: .destructive, title: CommonLK.deleteButton.localized) { [weak self] _, _, completion in
             self?.presenter?.didDeleteSchedule(at: indexPath.row)
             completion(true)
         }
-        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.image = UIImage(systemName: ScheduleConstants.Icon.delete.value)
 
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }

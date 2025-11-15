@@ -94,7 +94,7 @@ class CBScheduleCell: UITableViewCell {
         plantNameLabel.text = schedule.plantName
 
         let formatter = DateFormatter()
-        formatter.timeStyle = .short
+        formatter.dateFormat = ScheduleConstants.DateFormat.time.value
         timeLabel.text = "⏰ " + formatter.string(from: schedule.wateringTime)
 
         intervalLabel.text = "🔁 " + schedule.repeatInterval.rawValue

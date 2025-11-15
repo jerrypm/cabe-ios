@@ -19,8 +19,8 @@ class CBNotificationManager {
         guard schedule.isEnabled else { return }
 
         let content = UNMutableNotificationContent()
-        content.title = "🌶️ Waktunya Menyiram Cabe!"
-        content.body = "Jangan lupa menyiram tanaman \(schedule.plantName) Anda"
+        content.title = NotificationLK.wateringReminderTitle.localized
+        content.body = NotificationLK.wateringReminderBody.localized(with: ["plantName": schedule.plantName])
         content.sound = .default
         content.badge = 1
 
@@ -76,8 +76,8 @@ class CBNotificationManager {
 
     private func scheduleTwiceDailySecondNotification(for schedule: CBWateringSchedule, components: DateComponents) {
         let content = UNMutableNotificationContent()
-        content.title = "🌶️ Waktunya Menyiram Cabe!"
-        content.body = "Jangan lupa menyiram tanaman \(schedule.plantName) Anda (penyiraman ke-2)"
+        content.title = NotificationLK.wateringReminderTitle.localized
+        content.body = NotificationLK.wateringReminderBody.localized(with: ["plantName": schedule.plantName]) + " (penyiraman ke-2)"
         content.sound = .default
         content.badge = 1
 
@@ -111,7 +111,7 @@ class CBNotificationManager {
     // Send immediate notification for tips
     func sendTipNotification(tip: CBPlantTip) {
         let content = UNMutableNotificationContent()
-        content.title = "💡 Tips Perawatan Cabe"
+        content.title = NotificationLK.tipOfTheDayTitle.localized
         content.body = tip.title
         content.sound = .default
         content.badge = 1

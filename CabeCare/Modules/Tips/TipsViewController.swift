@@ -15,7 +15,7 @@ class TipsViewController: UIViewController {
 
     private let searchController: UISearchController = {
         let controller = UISearchController(searchResultsController: nil)
-        controller.searchBar.placeholder = "Cari tips perawatan cabe..."
+        controller.searchBar.placeholder = TipsLandingLK.searchPlaceholder.localized
         return controller
     }()
 
@@ -23,14 +23,14 @@ class TipsViewController: UIViewController {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.delegate = self
         table.dataSource = self
-        table.register(CBTipCell.self, forCellReuseIdentifier: "CBTipCell")
+        table.register(CBTipCell.self, forCellReuseIdentifier: TipsConstants.CellIdentifier.tipCell.value)
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
 
     private lazy var searchButton: UIButton = {
         var config = UIButton.Configuration.filled()
-        config.title = "Cari Tips di Internet"
+        config.title = TipsLandingLK.searchOnlineButton.localized
         config.image = UIImage(systemName: "magnifyingglass")
         config.imagePadding = 8
         config.baseBackgroundColor = .systemGreen
@@ -45,7 +45,7 @@ class TipsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "💡 Tips Perawatan"
+        title = "💡 " + TipsLandingLK.screenTitle.localized
         view.backgroundColor = .systemBackground
 
         setupSearchController()
@@ -97,14 +97,14 @@ class TipsViewController: UIViewController {
     }
 
     @objc private func searchOnlineTapped() {
-        let alert = UIAlertController(title: "Cari Tips", message: "Masukkan kata kunci untuk mencari tips", preferredStyle: .alert)
+        let alert = UIAlertController(title: TipsAlertLK.addTipAlertTitle.localized, message: TipsAlertLK.addTipAlertMessage.localized, preferredStyle: .alert)
 
         alert.addTextField { textField in
-            textField.placeholder = "contoh: penyiraman, pemupukan"
+            textField.placeholder = TipsLandingLK.searchQueryPlaceholder.localized
         }
 
-        alert.addAction(UIAlertAction(title: "Batal", style: .cancel))
-        alert.addAction(UIAlertAction(title: "Cari", style: .default) { [weak self] _ in
+        alert.addAction(UIAlertAction(title: CommonLK.cancelButton.localized, style: .cancel))
+        alert.addAction(UIAlertAction(title: TipsAlertLK.searchButton.localized, style: .default) { [weak self] _ in
             guard let query = alert.textFields?.first?.text, !query.isEmpty else { return }
             self?.performOnlineSearch(query: query)
         })
@@ -114,7 +114,7 @@ class TipsViewController: UIViewController {
 
     private func performOnlineSearch(query: String) {
         // Show loading indicator
-        let loadingAlert = UIAlertController(title: "Mencari...", message: "Mohon tunggu sebentar", preferredStyle: .alert)
+        let loadingAlert = UIAlertController(title: CommonLK.loading.localized, message: TipsAlertLK.loadingMessage.localized, preferredStyle: .alert)
         present(loadingAlert, animated: true)
 
         // Search for tips
@@ -124,7 +124,7 @@ class TipsViewController: UIViewController {
             // Dismiss loading alert
             loadingAlert.dismiss(animated: true) {
                 if tips.isEmpty {
-                    self.showAlert(title: "Tidak Ditemukan", message: "Tidak ada tips yang sesuai dengan pencarian Anda")
+                    self.showAlert(title: TipsAlertLK.notFoundTitle.localized, message: TipsAlertLK.notFoundMessage.localized)
                 } else {
                     // Save first tip and send notification
                     let firstTip = tips[0]
@@ -135,7 +135,7 @@ class TipsViewController: UIViewController {
                     self.loadTips()
 
                     // Show result
-                    self.showAlert(title: "Tips Ditemukan!", message: "Tips baru telah ditambahkan dan notifikasi dikirim")
+                    self.showAlert(title: TipsAlertLK.tipAddedSuccessMessage.localized, message: TipsAlertLK.tipAddedWithNotificationMessage.localized)
                 }
             }
         }
@@ -143,7 +143,7 @@ class TipsViewController: UIViewController {
 
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: CommonLK.okButton.localized, style: .default))
         present(alert, animated: true)
     }
 
@@ -167,7 +167,7 @@ extension TipsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CBTipCell", for: indexPath) as! CBTipCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TipsConstants.CellIdentifier.tipCell.value, for: indexPath) as! CBTipCell
         let tip = displayedTips[indexPath.row]
         cell.configure(with: tip)
         return cell

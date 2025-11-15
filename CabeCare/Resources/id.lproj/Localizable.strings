@@ -1,0 +1,143 @@
+/*
+ * Localizable.strings (Indonesian)
+ * CabeCare
+ *
+ * Created on 2025-01-14.
+ * Pattern: Mandiri iOS String Management
+ */
+
+/* ========================================
+   COMMON STRINGS
+   ======================================== */
+
+/* Common Buttons */
+"commonOkButtonLabel" = "OK";
+"commonCancelButtonLabel" = "Batal";
+"commonCloseButtonLabel" = "Tutup";
+"commonBackButtonLabel" = "Kembali";
+"commonSaveButtonLabel" = "Simpan";
+"commonDeleteButtonLabel" = "Hapus";
+"commonShareButtonLabel" = "Bagikan";
+"commonEditButtonLabel" = "Edit";
+"commonAddButtonLabel" = "Tambah";
+
+/* Common Alerts */
+"commonSuccessAlertTitleLabel" = "Berhasil";
+"commonErrorAlertTitleLabel" = "Error";
+"commonWarningAlertTitleLabel" = "Peringatan";
+"commonConfirmationAlertTitleLabel" = "Konfirmasi";
+
+/* Common Messages */
+"commonDeleteConfirmationMessageLabel" = "Apakah Anda yakin ingin menghapus item ini?";
+"commonSaveSuccessMessageLabel" = "Data berhasil disimpan";
+"commonDeleteSuccessMessageLabel" = "Data berhasil dihapus";
+"commonErrorMessageLabel" = "Terjadi kesalahan. Silakan coba lagi.";
+"commonPlantNameMessageLabel" = "Mohon masukkan nama tanaman";
+
+/* Common General */
+"commonLoadingLabel" = "Memuat...";
+"commonNoDataLabel" = "Tidak ada data";
+"commonRetryLabel" = "Coba Lagi";
+
+
+/* ========================================
+   NOTIFICATIONS
+   ======================================== */
+
+/* Watering Reminder Notifications */
+"notificationWateringReminderTitleLabel" = "🌶️ Waktunya Menyiram Cabe!";
+"notificationWateringReminderBodyLabel" = "Jangan lupa siram tanaman {{plantName}} Anda hari ini.";
+
+/* Tip of the Day Notifications */
+"notificationTipOfTheDayTitleLabel" = "💡 Tips Hari Ini";
+
+/* Schedule Alert Notifications */
+"notificationScheduleAlertTitleLabel" = "Pengingat Jadwal";
+"notificationScheduleAlertBodyLabel" = "Saatnya merawat tanaman {{plantName}} Anda!";
+
+
+/* ========================================
+   SCHEDULE MODULE
+   ======================================== */
+
+/* Schedule Screen */
+"scheduleScreenTitleLabel" = "Jadwal Penyiraman";
+"scheduleAddScheduleButtonLabel" = "Tambah Jadwal";
+"scheduleNextWateringLabel" = "Penyiraman Berikutnya";
+"scheduleEmptyStateMessageLabel" = "Belum ada jadwal penyiraman";
+
+
+/* ========================================
+   TABBAR MODULE
+   ======================================== */
+
+/* TabBar Tabs */
+"tabBarScheduleTabLabel" = "Jadwal";
+"tabBarTipsTabLabel" = "Tips";
+
+
+/* ========================================
+   TIPS MODULE
+   ======================================== */
+
+/* Tips Landing Screen */
+"tipsLandingScreenTitleLabel" = "Tips Perawatan";
+"tipsLandingAddTipButtonLabel" = "Tambah Tips";
+"tipsLandingSearchOnlineButtonLabel" = "Cari Tips di Internet";
+"tipsLandingEmptyStateMessageLabel" = "Belum ada tips tersimpan";
+"tipsLandingSearchPlaceholderTextField" = "Cari tips...";
+"tipsLandingSearchQueryPlaceholderTextField" = "contoh: penyiraman, pemupukan";
+
+/* Tips Add/Edit Alerts */
+"tipsAddTipAlertTitleLabel" = "Tambah Tips Baru";
+"tipsAddTipAlertMessageLabel" = "Masukkan judul dan deskripsi tips";
+"tipsAddTipTitlePlaceholderTextField" = "Judul tips";
+"tipsAddTipDescriptionPlaceholderTextField" = "Deskripsi tips";
+"tipsEditTipAlertTitleLabel" = "Edit Tips";
+
+/* Tips Delete Confirmation */
+"tipsDeleteConfirmationTitleLabel" = "Hapus Tips";
+"tipsDeleteConfirmationMessageLabel" = "Apakah Anda yakin ingin menghapus tips ini?";
+
+/* Tips Success Messages */
+"tipsTipAddedSuccessMessageLabel" = "Tips berhasil ditambahkan";
+"tipsTipUpdatedSuccessMessageLabel" = "Tips berhasil diperbarui";
+"tipsTipDeletedSuccessMessageLabel" = "Tips berhasil dihapus";
+"tipsTipAddedWithNotificationMessageLabel" = "Tips baru telah ditambahkan dan notifikasi dikirim";
+
+/* Tips Search */
+"tipsSearchButtonLabel" = "Cari";
+"tipsLoadingMessageLabel" = "Mohon tunggu sebentar";
+"tipsNotFoundTitleLabel" = "Tidak Ditemukan";
+"tipsNotFoundMessageLabel" = "Tidak ada tips yang sesuai dengan pencarian Anda";
+
+
+/* ========================================
+   ADD SCHEDULE MODULE
+   ======================================== */
+
+/* Add Schedule Screen */
+"addScheduleScreenTitleLabel" = "Tambah Jadwal";
+"addScheduleEditScreenTitleLabel" = "Edit Jadwal";
+"addSchedulePlantNameLabel" = "Nama Tanaman";
+"addScheduleWateringTimeLabel" = "Waktu Penyiraman";
+"addScheduleFrequencyLabel" = "Frekuensi";
+"addScheduleIntervalLabel" = "Interval Penyiraman";
+"addScheduleNotesLabel" = "Catatan";
+"addSchedulePlantNamePlaceholderTextField" = "Nama Tanaman (contoh: Cabe Rawit)";
+"addScheduleNotesPlaceholderTextField" = "Catatan (opsional)";
+"addScheduleSaveButtonLabel" = "Simpan Jadwal";
+"addScheduleSaveSuccessMessageLabel" = "Jadwal berhasil disimpan";
+
+
+/* ========================================
+   TIP DETAIL MODULE
+   ======================================== */
+
+/* Tip Detail Screen */
+"tipDetailScreenTitleLabel" = "Detail Tips";
+"tipDetailEditButtonLabel" = "Edit";
+"tipDetailDeleteButtonLabel" = "Hapus";
+"tipDetailShareButtonLabel" = "Bagikan Tips";
+"tipDetailSourceLabel" = "Sumber: {{source}}";
+"tipDetailShareTextTemplate" = "🌶️ Tips Perawatan Cabe: {{title}} - {{content}} - {{source}}";

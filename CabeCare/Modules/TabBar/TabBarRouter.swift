@@ -28,8 +28,8 @@ class TabBarRouter: TabBarRouterProtocol {
 
         // Configure tab items
         let tabItems = [
-            CBTabBarEntity(icon: "calendar.fill", title: "Jadwal"),
-            CBTabBarEntity(icon: "lightbulb.fill", title: "Tips")
+            CBTabBarEntity(icon: "calendar.fill", title: TabBarLK.scheduleTab.localized),
+            CBTabBarEntity(icon: "lightbulb.fill", title: TabBarLK.tipsTab.localized)
         ]
 
         // Setup tab bar with view controllers

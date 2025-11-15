@@ -34,6 +34,17 @@
 		1392E8242EC77C37003B5E03 /* CBTipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8232EC77C37003B5E03 /* CBTipCell.swift */; };
 		1392E8262EC77C54003B5E03 /* CBPlantTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8252EC77C54003B5E03 /* CBPlantTip.swift */; };
 		1392E8282EC77C5B003B5E03 /* CBWateringSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8272EC77C5B003B5E03 /* CBWateringSchedule.swift */; };
+		1392E82B2EC7884E003B5E03 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8292EC7884E003B5E03 /* String+Localization.swift */; };
+		1392E82F2EC78855003B5E03 /* NotificationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E82D2EC78855003B5E03 /* NotificationString.swift */; };
+		1392E8302EC78855003B5E03 /* CommonString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E82C2EC78855003B5E03 /* CommonString.swift */; };
+		139C53EB2EC7902500172FCA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 139C53E92EC7902500172FCA /* Localizable.strings */; };
+		139C53ED2EC7906600172FCA /* AddScheduleLocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C53EC2EC7906600172FCA /* AddScheduleLocalizedKeys.swift */; };
+		139C53EF2EC7906F00172FCA /* ScheduleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C53EE2EC7906F00172FCA /* ScheduleConstants.swift */; };
+		139C53F52EC7908300172FCA /* TipDetailLocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C53F22EC7908300172FCA /* TipDetailLocalizedKeys.swift */; };
+		139C53F62EC7908300172FCA /* ScheduleLocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C53F02EC7908300172FCA /* ScheduleLocalizedKeys.swift */; };
+		139C53F72EC7908300172FCA /* TipsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C53F32EC7908300172FCA /* TipsConstants.swift */; };
+		139C53F82EC7908300172FCA /* TipsLocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C53F42EC7908300172FCA /* TipsLocalizedKeys.swift */; };
+		139C53F92EC7908300172FCA /* TabBarLocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139C53F12EC7908300172FCA /* TabBarLocalizedKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +76,18 @@
 		1392E8232EC77C37003B5E03 /* CBTipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTipCell.swift; sourceTree = "<group>"; };
 		1392E8252EC77C54003B5E03 /* CBPlantTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPlantTip.swift; sourceTree = "<group>"; };
 		1392E8272EC77C5B003B5E03 /* CBWateringSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWateringSchedule.swift; sourceTree = "<group>"; };
+		1392E8292EC7884E003B5E03 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		1392E82C2EC78855003B5E03 /* CommonString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonString.swift; sourceTree = "<group>"; };
+		1392E82D2EC78855003B5E03 /* NotificationString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationString.swift; sourceTree = "<group>"; };
+		139C53E72EC7902500172FCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		139C53E82EC7902500172FCA /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		139C53EC2EC7906600172FCA /* AddScheduleLocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleLocalizedKeys.swift; sourceTree = "<group>"; };
+		139C53EE2EC7906F00172FCA /* ScheduleConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleConstants.swift; sourceTree = "<group>"; };
+		139C53F02EC7908300172FCA /* ScheduleLocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalizedKeys.swift; sourceTree = "<group>"; };
+		139C53F12EC7908300172FCA /* TabBarLocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarLocalizedKeys.swift; sourceTree = "<group>"; };
+		139C53F22EC7908300172FCA /* TipDetailLocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDetailLocalizedKeys.swift; sourceTree = "<group>"; };
+		139C53F32EC7908300172FCA /* TipsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsConstants.swift; sourceTree = "<group>"; };
+		139C53F42EC7908300172FCA /* TipsLocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsLocalizedKeys.swift; sourceTree = "<group>"; };
 		CC0000000000000000000001 /* CabeCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CabeCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +135,8 @@
 		1302ED872EBDFE0600B0FECF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1392E82E2EC78855003B5E03 /* Constants */,
+				1392E82A2EC7884E003B5E03 /* Extensions */,
 				1302ED832EBDFE0600B0FECF /* Managers */,
 				1302ED862EBDFE0600B0FECF /* Views */,
 			);
@@ -197,6 +222,38 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		1392E82A2EC7884E003B5E03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1392E8292EC7884E003B5E03 /* String+Localization.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1392E82E2EC78855003B5E03 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				139C53EC2EC7906600172FCA /* AddScheduleLocalizedKeys.swift */,
+				1392E82C2EC78855003B5E03 /* CommonString.swift */,
+				1392E82D2EC78855003B5E03 /* NotificationString.swift */,
+				139C53EE2EC7906F00172FCA /* ScheduleConstants.swift */,
+				139C53F02EC7908300172FCA /* ScheduleLocalizedKeys.swift */,
+				139C53F12EC7908300172FCA /* TabBarLocalizedKeys.swift */,
+				139C53F22EC7908300172FCA /* TipDetailLocalizedKeys.swift */,
+				139C53F32EC7908300172FCA /* TipsConstants.swift */,
+				139C53F42EC7908300172FCA /* TipsLocalizedKeys.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		139C53EA2EC7902500172FCA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				139C53E92EC7902500172FCA /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		EE0000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +271,7 @@
 				1302ED872EBDFE0600B0FECF /* Common */,
 				1302ED8A2EBDFE0600B0FECF /* Entities */,
 				1302ED9B2EBDFE0600B0FECF /* Modules */,
+				139C53EA2EC7902500172FCA /* Resources */,
 			);
 			path = CabeCare;
 			sourceTree = "<group>";
@@ -270,6 +328,7 @@
 			knownRegions = (
 				en,
 				Base,
+				id,
 			);
 			mainGroup = EE0000000000000000000001;
 			productRefGroup = EE0000000000000000000003 /* Products */;
@@ -287,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1302ED9C2EBDFE0600B0FECF /* Assets.xcassets in Resources */,
+				139C53EB2EC7902500172FCA /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +358,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1392E8202EC77C0E003B5E03 /* CBTipsSearchManager.swift in Sources */,
+				139C53EF2EC7906F00172FCA /* ScheduleConstants.swift in Sources */,
 				1392E81C2EC77BC2003B5E03 /* CBDataManager.swift in Sources */,
+				139C53F52EC7908300172FCA /* TipDetailLocalizedKeys.swift in Sources */,
+				139C53F62EC7908300172FCA /* ScheduleLocalizedKeys.swift in Sources */,
+				139C53F72EC7908300172FCA /* TipsConstants.swift in Sources */,
+				139C53F82EC7908300172FCA /* TipsLocalizedKeys.swift in Sources */,
+				139C53F92EC7908300172FCA /* TabBarLocalizedKeys.swift in Sources */,
+				1392E82F2EC78855003B5E03 /* NotificationString.swift in Sources */,
+				1392E8302EC78855003B5E03 /* CommonString.swift in Sources */,
 				1302EDA02EBDFE0600B0FECF /* MainRouter.swift in Sources */,
 				1302EDA22EBDFE0600B0FECF /* ScheduleRouter.swift in Sources */,
 				1302EDA32EBDFE0600B0FECF /* ScheduleView.swift in Sources */,
@@ -309,9 +377,11 @@
 				1344795E2EC736C8008B16CC /* TabBarView.swift in Sources */,
 				1344795F2EC736C8008B16CC /* TabBarPresenter.swift in Sources */,
 				1392E81E2EC77C01003B5E03 /* CBNotificationManager.swift in Sources */,
+				1392E82B2EC7884E003B5E03 /* String+Localization.swift in Sources */,
 				1302EDA62EBDFE0600B0FECF /* AddScheduleViewController.swift in Sources */,
 				1392E8192EC77BA7003B5E03 /* CBTabBarButton.swift in Sources */,
 				1392E81A2EC77BA7003B5E03 /* CBTabBarView.swift in Sources */,
+				139C53ED2EC7906600172FCA /* AddScheduleLocalizedKeys.swift in Sources */,
 				1302EDA72EBDFE0600B0FECF /* ScheduleContract.swift in Sources */,
 				1302EDA82EBDFE0600B0FECF /* TipsViewController.swift in Sources */,
 				1302EDAA2EBDFE0600B0FECF /* SchedulePresenter.swift in Sources */,
@@ -327,6 +397,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		139C53E92EC7902500172FCA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				139C53E72EC7902500172FCA /* en */,
+				139C53E82EC7902500172FCA /* id */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		GG0000000000000000000001 /* Debug */ = {

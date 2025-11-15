@@ -11,8 +11,8 @@ import Foundation
 class CBDataManager {
     static let shared = CBDataManager()
 
-    private let schedulesKey = "wateringSchedules"
-    private let tipsKey = "plantTips"
+    private let schedulesKey = UserDefaultsKey.schedules.value
+    private let tipsKey = UserDefaultsKey.tips.value
 
     private init() {}
 

@@ -32,7 +32,7 @@ class AddScheduleViewController: UIViewController {
 
     private let plantNameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Nama Tanaman (contoh: Cabe Rawit)"
+        textField.placeholder = AddScheduleLK.plantNamePlaceholder.localized
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -40,7 +40,7 @@ class AddScheduleViewController: UIViewController {
 
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Waktu Penyiraman"
+        label.text = AddScheduleLK.wateringTimeLabel.localized
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -56,7 +56,7 @@ class AddScheduleViewController: UIViewController {
 
     private let intervalLabel: UILabel = {
         let label = UILabel()
-        label.text = "Interval Penyiraman"
+        label.text = AddScheduleLK.intervalLabel.localized
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -70,7 +70,7 @@ class AddScheduleViewController: UIViewController {
 
     private let notesTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Catatan (opsional)"
+        textField.placeholder = AddScheduleLK.notesPlaceholder.localized
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
@@ -81,7 +81,7 @@ class AddScheduleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = scheduleToEdit == nil ? "Tambah Jadwal" : "Edit Jadwal"
+        title = scheduleToEdit == nil ? AddScheduleLK.screenTitleAdd.localized : AddScheduleLK.screenTitleEdit.localized
         view.backgroundColor = .systemBackground
 
         setupNavigationBar()
@@ -170,7 +170,7 @@ class AddScheduleViewController: UIViewController {
 
     @objc private func saveTapped() {
         guard let plantName = plantNameTextField.text, !plantName.isEmpty else {
-            showAlert(message: "Mohon masukkan nama tanaman")
+            showAlert(message: CommonLK.plantNameTitle.localized)
             return
         }
 
@@ -215,8 +215,8 @@ class AddScheduleViewController: UIViewController {
     }
 
     private func showAlert(message: String) {
-        let alert = UIAlertController(title: "Perhatian", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        let alert = UIAlertController(title: CommonLK.warningTitle.localized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: CommonLK.okButton.localized, style: .default))
         present(alert, animated: true)
     }
 }

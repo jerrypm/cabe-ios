@@ -61,7 +61,7 @@ class TipDetailViewController: UIViewController {
 
     private lazy var shareButton: UIButton = {
         var config = UIButton.Configuration.filled()
-        config.title = "Bagikan Tips"
+        config.title = TipDetailLK.shareButton.localized
         config.image = UIImage(systemName: "square.and.arrow.up")
         config.imagePadding = 8
         config.baseBackgroundColor = .systemGreen
@@ -85,7 +85,7 @@ class TipDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Detail Tips"
+        title = TipDetailLK.screenTitle.localized
         view.backgroundColor = .systemBackground
 
         setupUI()
@@ -142,20 +142,19 @@ class TipDetailViewController: UIViewController {
         contentLabel.text = tip.content
 
         if let source = tip.source {
-            sourceLabel.text = "Sumber: \(source)"
+            sourceLabel.text = TipDetailLK.sourceLabel.localized(with: ["source": source])
         } else {
             sourceLabel.isHidden = true
         }
     }
 
     @objc private func shareTapped() {
-        let text = """
-        🌶️ Tips Perawatan Cabe: \(tip.title)
-
-        \(tip.content)
-
-        \(tip.source.map { "Sumber: \($0)" } ?? "")
-        """
+        let sourceText = tip.source.map { TipDetailLK.sourceLabel.localized(with: ["source": $0]) } ?? ""
+        let text = TipDetailLK.shareTextTemplate.localized(with: [
+            "title": tip.title,
+            "content": tip.content,
+            "source": sourceText
+        ])
 
         let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = shareButton

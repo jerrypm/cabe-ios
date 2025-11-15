@@ -1,0 +1,129 @@
+/*
+ * Localizable.strings (English)
+ * CabeCare
+ *
+ * Created on 2025-01-14.
+ * Pattern: Mandiri iOS String Management
+ * Note: English translations - for future multi-language support
+ */
+
+/* ========================================
+   COMMON STRINGS
+   ======================================== */
+
+/* Common Buttons */
+"commonOkButtonLabel" = "OK";
+"commonCancelButtonLabel" = "Cancel";
+"commonCloseButtonLabel" = "Close";
+"commonBackButtonLabel" = "Back";
+"commonSaveButtonLabel" = "Save";
+"commonDeleteButtonLabel" = "Delete";
+"commonShareButtonLabel" = "Share";
+"commonEditButtonLabel" = "Edit";
+"commonAddButtonLabel" = "Add";
+
+/* Common Alerts */
+"commonSuccessAlertTitleLabel" = "Success";
+"commonErrorAlertTitleLabel" = "Error";
+"commonWarningAlertTitleLabel" = "Warning";
+"commonConfirmationAlertTitleLabel" = "Confirmation";
+
+/* Common Messages */
+"commonDeleteConfirmationMessageLabel" = "Are you sure you want to delete this item?";
+"commonSaveSuccessMessageLabel" = "Data saved successfully";
+"commonDeleteSuccessMessageLabel" = "Data deleted successfully";
+"commonErrorMessageLabel" = "An error occurred. Please try again.";
+
+/* Common General */
+"commonLoadingLabel" = "Loading...";
+"commonNoDataLabel" = "No data";
+"commonRetryLabel" = "Retry";
+
+
+/* ========================================
+   NOTIFICATIONS
+   ======================================== */
+
+/* Watering Reminder Notifications */
+"notificationWateringReminderTitleLabel" = "🌶️ Time to Water Your Chili!";
+"notificationWateringReminderBodyLabel" = "Don't forget to water your {{plantName}} plant today.";
+
+/* Tip of the Day Notifications */
+"notificationTipOfTheDayTitleLabel" = "💡 Tip of the Day";
+
+/* Schedule Alert Notifications */
+"notificationScheduleAlertTitleLabel" = "Schedule Reminder";
+"notificationScheduleAlertBodyLabel" = "Time to care for your {{plantName}} plant!";
+
+
+/* ========================================
+   SCHEDULE MODULE
+   ======================================== */
+
+/* Schedule Screen */
+"scheduleScreenTitleLabel" = "Watering Schedule";
+"scheduleAddScheduleButtonLabel" = "Add Schedule";
+"scheduleNextWateringLabel" = "Next Watering";
+"scheduleEmptyStateMessageLabel" = "No watering schedules yet";
+
+
+/* ========================================
+   TABBAR MODULE
+   ======================================== */
+
+/* TabBar Tabs */
+"tabBarScheduleTabLabel" = "Schedule";
+"tabBarTipsTabLabel" = "Tips";
+
+
+/* ========================================
+   TIPS MODULE
+   ======================================== */
+
+/* Tips Landing Screen */
+"tipsLandingScreenTitleLabel" = "Care Tips";
+"tipsLandingAddTipButtonLabel" = "Add Tip";
+"tipsLandingEmptyStateMessageLabel" = "No tips saved yet";
+"tipsLandingSearchPlaceholderTextField" = "Search tips...";
+
+/* Tips Add/Edit Alerts */
+"tipsAddTipAlertTitleLabel" = "Add New Tip";
+"tipsAddTipAlertMessageLabel" = "Enter tip title and description";
+"tipsAddTipTitlePlaceholderTextField" = "Tip title";
+"tipsAddTipDescriptionPlaceholderTextField" = "Tip description";
+"tipsEditTipAlertTitleLabel" = "Edit Tip";
+
+/* Tips Delete Confirmation */
+"tipsDeleteConfirmationTitleLabel" = "Delete Tip";
+"tipsDeleteConfirmationMessageLabel" = "Are you sure you want to delete this tip?";
+
+/* Tips Success Messages */
+"tipsTipAddedSuccessMessageLabel" = "Tip added successfully";
+"tipsTipUpdatedSuccessMessageLabel" = "Tip updated successfully";
+"tipsTipDeletedSuccessMessageLabel" = "Tip deleted successfully";
+
+
+/* ========================================
+   ADD SCHEDULE MODULE
+   ======================================== */
+
+/* Add Schedule Screen */
+"addScheduleScreenTitleLabel" = "Add Schedule";
+"addSchedulePlantNameLabel" = "Plant Name";
+"addScheduleWateringTimeLabel" = "Watering Time";
+"addScheduleFrequencyLabel" = "Frequency";
+"addScheduleNotesLabel" = "Notes";
+"addSchedulePlantNamePlaceholderTextField" = "Enter plant name";
+"addScheduleNotesPlaceholderTextField" = "Add notes (optional)";
+"addScheduleSaveButtonLabel" = "Save Schedule";
+"addScheduleSaveSuccessMessageLabel" = "Schedule saved successfully";
+
+
+/* ========================================
+   TIP DETAIL MODULE
+   ======================================== */
+
+/* Tip Detail Screen */
+"tipDetailScreenTitleLabel" = "Tip Details";
+"tipDetailEditButtonLabel" = "Edit";
+"tipDetailDeleteButtonLabel" = "Delete";
