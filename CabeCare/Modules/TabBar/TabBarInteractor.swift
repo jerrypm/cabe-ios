@@ -21,8 +21,9 @@ extension TabBarInteractor: TabBarInteractorProtocol {
     func fetchTabConfiguration() {
         // Return tab configuration
         let tabs = [
-            CBTabBarEntity(icon: "calendar.fill", title: "Jadwal"),
-            CBTabBarEntity(icon: "lightbulb.fill", title: "Tips")
+            CBTabBarEntity(icon: "ic_schedule", title: TabBarLK.scheduleTab.localized),
+            CBTabBarEntity(icon: "ic_tips", title: TabBarLK.tipsTab.localized),
+            CBTabBarEntity(icon: "ic_settings", title: TabBarLK.settingsTab.localized)
         ]
 
         presenter?.didFetchTabConfiguration(tabs)

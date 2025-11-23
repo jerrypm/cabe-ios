@@ -50,9 +50,21 @@ class CBTabBarButton: UIButton {
         super.init(frame: .zero)
 
         setupUI()
-        iconImageView.image = UIImage(systemName: icon)
+        configureIcon(named: icon)
         tabTitleLabel.text = title
         updateAppearance()
+    }
+
+    // MARK: - Configuration
+
+    private func configureIcon(named iconName: String) {
+        // Try loading from assets first (custom images)
+        if let customImage = UIImage(named: iconName) {
+            iconImageView.image = customImage.withRenderingMode(.alwaysTemplate)
+        } else {
+            // Fallback to SF Symbols
+            iconImageView.image = UIImage(systemName: iconName)
+        }
     }
 
     required init?(coder: NSCoder) {

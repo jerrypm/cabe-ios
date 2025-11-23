@@ -74,6 +74,7 @@
 /* TabBar Tabs */
 "tabBarScheduleTabLabel" = "Schedule";
 "tabBarTipsTabLabel" = "Tips";
+"tabBarSettingsTabLabel" = "Settings";
 
 
 /* ========================================
@@ -127,3 +128,17 @@
 "tipDetailScreenTitleLabel" = "Tip Details";
 "tipDetailEditButtonLabel" = "Edit";
 "tipDetailDeleteButtonLabel" = "Delete";
+
+
+/* ========================================
+   SETTINGS MODULE
+   ======================================== */
+
+/* Settings Screen */
+"settingsScreenTitle" = "Settings";
+"settingsLanguageSectionTitle" = "Language";
+
+/* Restart Alert */
+"settingsRestartAlertTitle" = "Language Changed";
+"settingsRestartAlertMessage" = "Please restart the app for the language change to take effect.";
+"settingsRestartAlertOK" = "OK";

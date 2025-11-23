@@ -74,6 +74,7 @@
 /* TabBar Tabs */
 "tabBarScheduleTabLabel" = "Jadwal";
 "tabBarTipsTabLabel" = "Tips";
+"tabBarSettingsTabLabel" = "Pengaturan";
 
 
 /* ========================================
@@ -141,3 +142,17 @@
 "tipDetailShareButtonLabel" = "Bagikan Tips";
 "tipDetailSourceLabel" = "Sumber: {{source}}";
 "tipDetailShareTextTemplate" = "🌶️ Tips Perawatan Cabe: {{title}} - {{content}} - {{source}}";
+
+
+/* ========================================
+   SETTINGS MODULE
+   ======================================== */
+
+/* Settings Screen */
+"settingsScreenTitle" = "Pengaturan";
+"settingsLanguageSectionTitle" = "Bahasa";
+
+/* Restart Alert */
+"settingsRestartAlertTitle" = "Bahasa Berubah";
+"settingsRestartAlertMessage" = "Silakan restart aplikasi agar perubahan bahasa dapat diterapkan.";
+"settingsRestartAlertOK" = "OK";

@@ -25,6 +25,12 @@
 		1344795D2EC736C8008B16CC /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479562EC736C8008B16CC /* TabBarInteractor.swift */; };
 		1344795E2EC736C8008B16CC /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479592EC736C8008B16CC /* TabBarView.swift */; };
 		1344795F2EC736C8008B16CC /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134479572EC736C8008B16CC /* TabBarPresenter.swift */; };
+		136224E12ED2FBDD00C2A747 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136224DF2ED2FBDD00C2A747 /* SettingsView.swift */; };
+		136224E22ED2FBDD00C2A747 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136224DC2ED2FBDD00C2A747 /* SettingsInteractor.swift */; };
+		136224E32ED2FBDD00C2A747 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136224DD2ED2FBDD00C2A747 /* SettingsPresenter.swift */; };
+		136224E42ED2FBDD00C2A747 /* SettingsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136224DB2ED2FBDD00C2A747 /* SettingsContract.swift */; };
+		136224E52ED2FBDD00C2A747 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136224DE2ED2FBDD00C2A747 /* SettingsRouter.swift */; };
+		136224E72ED2FC5300C2A747 /* SettingsLocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136224E62ED2FC5300C2A747 /* SettingsLocalizedKeys.swift */; };
 		1392E8192EC77BA7003B5E03 /* CBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8172EC77BA7003B5E03 /* CBTabBarButton.swift */; };
 		1392E81A2EC77BA7003B5E03 /* CBTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E8182EC77BA7003B5E03 /* CBTabBarView.swift */; };
 		1392E81C2EC77BC2003B5E03 /* CBDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392E81B2EC77BC2003B5E03 /* CBDataManager.swift */; };
@@ -67,6 +73,12 @@
 		134479572EC736C8008B16CC /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		134479582EC736C8008B16CC /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		134479592EC736C8008B16CC /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		136224DB2ED2FBDD00C2A747 /* SettingsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContract.swift; sourceTree = "<group>"; };
+		136224DC2ED2FBDD00C2A747 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		136224DD2ED2FBDD00C2A747 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		136224DE2ED2FBDD00C2A747 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		136224DF2ED2FBDD00C2A747 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		136224E62ED2FC5300C2A747 /* SettingsLocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLocalizedKeys.swift; sourceTree = "<group>"; };
 		1392E8172EC77BA7003B5E03 /* CBTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarButton.swift; sourceTree = "<group>"; };
 		1392E8182EC77BA7003B5E03 /* CBTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTabBarView.swift; sourceTree = "<group>"; };
 		1392E81B2EC77BC2003B5E03 /* CBDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDataManager.swift; sourceTree = "<group>"; };
@@ -203,6 +215,7 @@
 				1302ED8E2EBDFE0600B0FECF /* AddSchedule */,
 				1302ED902EBDFE0600B0FECF /* Main */,
 				1302ED962EBDFE0600B0FECF /* Schedule */,
+				136224E02ED2FBDD00C2A747 /* Settings */,
 				1344795A2EC736C8008B16CC /* TabBar */,
 				1302ED982EBDFE0600B0FECF /* TipDetail */,
 				1302ED9A2EBDFE0600B0FECF /* Tips */,
@@ -222,6 +235,18 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		136224E02ED2FBDD00C2A747 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				136224DB2ED2FBDD00C2A747 /* SettingsContract.swift */,
+				136224DC2ED2FBDD00C2A747 /* SettingsInteractor.swift */,
+				136224DD2ED2FBDD00C2A747 /* SettingsPresenter.swift */,
+				136224DE2ED2FBDD00C2A747 /* SettingsRouter.swift */,
+				136224DF2ED2FBDD00C2A747 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		1392E82A2EC7884E003B5E03 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +263,7 @@
 				1392E82D2EC78855003B5E03 /* NotificationString.swift */,
 				139C53EE2EC7906F00172FCA /* ScheduleConstants.swift */,
 				139C53F02EC7908300172FCA /* ScheduleLocalizedKeys.swift */,
+				136224E62ED2FC5300C2A747 /* SettingsLocalizedKeys.swift */,
 				139C53F12EC7908300172FCA /* TabBarLocalizedKeys.swift */,
 				139C53F22EC7908300172FCA /* TipDetailLocalizedKeys.swift */,
 				139C53F32EC7908300172FCA /* TipsConstants.swift */,
@@ -379,8 +405,14 @@
 				1392E81E2EC77C01003B5E03 /* CBNotificationManager.swift in Sources */,
 				1392E82B2EC7884E003B5E03 /* String+Localization.swift in Sources */,
 				1302EDA62EBDFE0600B0FECF /* AddScheduleViewController.swift in Sources */,
+				136224E72ED2FC5300C2A747 /* SettingsLocalizedKeys.swift in Sources */,
 				1392E8192EC77BA7003B5E03 /* CBTabBarButton.swift in Sources */,
 				1392E81A2EC77BA7003B5E03 /* CBTabBarView.swift in Sources */,
+				136224E12ED2FBDD00C2A747 /* SettingsView.swift in Sources */,
+				136224E22ED2FBDD00C2A747 /* SettingsInteractor.swift in Sources */,
+				136224E32ED2FBDD00C2A747 /* SettingsPresenter.swift in Sources */,
+				136224E42ED2FBDD00C2A747 /* SettingsContract.swift in Sources */,
+				136224E52ED2FBDD00C2A747 /* SettingsRouter.swift in Sources */,
 				139C53ED2EC7906600172FCA /* AddScheduleLocalizedKeys.swift in Sources */,
 				1302EDA72EBDFE0600B0FECF /* ScheduleContract.swift in Sources */,
 				1302EDA82EBDFE0600B0FECF /* TipsViewController.swift in Sources */,

@@ -25,15 +25,17 @@ class TabBarRouter: TabBarRouterProtocol {
         // Create child view controllers
         let scheduleVC = ScheduleRouter.createModule()
         let tipsVC = TipsViewController()
+        let settingsVC = SettingsRouter.createModule()
 
         // Configure tab items
         let tabItems = [
-            CBTabBarEntity(icon: "calendar.fill", title: TabBarLK.scheduleTab.localized),
-            CBTabBarEntity(icon: "lightbulb.fill", title: TabBarLK.tipsTab.localized)
+            CBTabBarEntity(icon: "ic_schedule", title: TabBarLK.scheduleTab.localized),
+            CBTabBarEntity(icon: "ic_tips", title: TabBarLK.tipsTab.localized),
+            CBTabBarEntity(icon: "ic_settings", title: TabBarLK.settingsTab.localized)
         ]
 
         // Setup tab bar with view controllers
-        view.setupTabBar(with: [scheduleVC, tipsVC], tabItems: tabItems)
+        view.setupTabBar(with: [scheduleVC, tipsVC, settingsVC], tabItems: tabItems)
 
         return view
     }

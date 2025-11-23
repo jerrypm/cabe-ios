@@ -17,6 +17,7 @@ enum TabBarLocalizedKey: String {
     // MARK: Tab Titles
     case scheduleTab = "tabBarScheduleTabLabel"
     case tipsTab = "tabBarTipsTabLabel"
+    case settingsTab = "tabBarSettingsTabLabel"
 
     var localized: String {
         return rawValue.localize()
