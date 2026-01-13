@@ -8,17 +8,17 @@
 
 import Foundation
 
-class TabBarPresenter {
+class CBTabBarPresenter {
 
     // MARK: - Properties
-    weak var view: TabBarViewProtocol?
-    var interactor: TabBarInteractorProtocol?
-    var router: TabBarRouterProtocol?
+    weak var view: CBTabBarViewProtocol?
+    var interactor: CBTabBarInteractorProtocol?
+    var router: CBTabBarRouterProtocol?
 }
 
-// MARK: - TabBarPresenterProtocol
+// MARK: - CBTabBarPresenterProtocol
 
-extension TabBarPresenter: TabBarPresenterProtocol {
+extension CBTabBarPresenter: CBTabBarPresenterProtocol {
 
     func viewDidLoad() {
         interactor?.fetchTabConfiguration()
@@ -29,9 +29,9 @@ extension TabBarPresenter: TabBarPresenterProtocol {
     }
 }
 
-// MARK: - TabBarInteractorOutputProtocol
+// MARK: - CBTabBarInteractorOutputProtocol
 
-extension TabBarPresenter: TabBarInteractorOutputProtocol {
+extension CBTabBarPresenter: CBTabBarInteractorOutputProtocol {
 
     func didFetchTabConfiguration(_ tabs: [CBTabBarEntity]) {
         // This will be called by router after setting up view controllers

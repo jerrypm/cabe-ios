@@ -1,5 +1,5 @@
 //
-//  SettingsRouter.swift
+//  CBSettingsRouter.swift
 //  CabeCare
 //
 //  Created by Jeri Purnama Maulid on 23/11/25.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SettingsRouter: SettingsRouterProtocol {
+class CBSettingsRouter: CBSettingsRouterProtocol {
 
     static func createModule() -> UIViewController {
-        let view = SettingsView()
-        let presenter = SettingsPresenter()
-        let interactor = SettingsInteractor()
-        let router = SettingsRouter()
+        let view = CBSettingsView()
+        let presenter = CBSettingsPresenter()
+        let interactor = CBSettingsInteractor()
+        let router = CBSettingsRouter()
 
         view.presenter = presenter
         presenter.view = view

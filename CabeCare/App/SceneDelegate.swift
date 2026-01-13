@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         // Create root view controller using VIPER
-        let mainViewController = MainRouter.createModule()
+        let mainViewController = CBMainRouter.createModule()
 
         window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()

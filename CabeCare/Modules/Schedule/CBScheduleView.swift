@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ScheduleView: UIViewController {
+class CBScheduleView: UIViewController {
 
-    var presenter: SchedulePresenterProtocol?
+    var presenter: CBSchedulePresenterProtocol?
 
     private var schedules: [CBWateringSchedule] = []
 
@@ -105,8 +105,8 @@ class ScheduleView: UIViewController {
     }
 }
 
-// MARK: - ScheduleViewProtocol
-extension ScheduleView: ScheduleViewProtocol {
+// MARK: - CBScheduleViewProtocol
+extension CBScheduleView: CBScheduleViewProtocol {
     func showSchedules(_ schedules: [CBWateringSchedule]) {
         self.schedules = schedules
         tableView.reloadData()
@@ -126,7 +126,7 @@ extension ScheduleView: ScheduleViewProtocol {
 }
 
 // MARK: - UITableViewDataSource
-extension ScheduleView: UITableViewDataSource {
+extension CBScheduleView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return schedules.count
     }
@@ -143,7 +143,7 @@ extension ScheduleView: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension ScheduleView: UITableViewDelegate {
+extension CBScheduleView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let schedule = schedules[indexPath.row]

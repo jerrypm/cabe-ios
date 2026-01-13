@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - View Protocol
-protocol ScheduleViewProtocol: AnyObject {
-    var presenter: SchedulePresenterProtocol? { get set }
+protocol CBScheduleViewProtocol: AnyObject {
+    var presenter: CBSchedulePresenterProtocol? { get set }
 
     func showSchedules(_ schedules: [CBWateringSchedule])
     func showEmptyState()
@@ -20,10 +20,10 @@ protocol ScheduleViewProtocol: AnyObject {
 }
 
 // MARK: - Presenter Protocol
-protocol SchedulePresenterProtocol: AnyObject {
-    var view: ScheduleViewProtocol? { get set }
-    var interactor: ScheduleInteractorProtocol? { get set }
-    var router: ScheduleRouterProtocol? { get set }
+protocol CBSchedulePresenterProtocol: AnyObject {
+    var view: CBScheduleViewProtocol? { get set }
+    var interactor: CBScheduleInteractorProtocol? { get set }
+    var router: CBScheduleRouterProtocol? { get set }
 
     func viewDidLoad()
     func viewWillAppear()
@@ -34,8 +34,8 @@ protocol SchedulePresenterProtocol: AnyObject {
 }
 
 // MARK: - Interactor Protocol
-protocol ScheduleInteractorProtocol: AnyObject {
-    var presenter: ScheduleInteractorOutputProtocol? { get set }
+protocol CBScheduleInteractorProtocol: AnyObject {
+    var presenter: CBScheduleInteractorOutputProtocol? { get set }
 
     func fetchSchedules()
     func toggleSchedule(_ schedule: CBWateringSchedule, isEnabled: Bool)
@@ -43,7 +43,7 @@ protocol ScheduleInteractorProtocol: AnyObject {
 }
 
 // MARK: - Interactor Output Protocol
-protocol ScheduleInteractorOutputProtocol: AnyObject {
+protocol CBScheduleInteractorOutputProtocol: AnyObject {
     func didFetchSchedules(_ schedules: [CBWateringSchedule])
     func didUpdateSchedule()
     func didDeleteSchedule()
@@ -51,9 +51,9 @@ protocol ScheduleInteractorOutputProtocol: AnyObject {
 }
 
 // MARK: - Router Protocol
-protocol ScheduleRouterProtocol: AnyObject {
+protocol CBScheduleRouterProtocol: AnyObject {
     static func createModule() -> UIViewController
 
-    func navigateToAddSchedule(from view: ScheduleViewProtocol?)
-    func navigateToEditSchedule(_ schedule: CBWateringSchedule, from view: ScheduleViewProtocol?)
+    func navigateToAddSchedule(from view: CBScheduleViewProtocol?)
+    func navigateToEditSchedule(_ schedule: CBWateringSchedule, from view: CBScheduleViewProtocol?)
 }

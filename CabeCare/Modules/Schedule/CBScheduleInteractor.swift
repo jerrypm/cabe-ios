@@ -8,8 +8,8 @@
 
 import Foundation
 
-class ScheduleInteractor: ScheduleInteractorProtocol {
-    weak var presenter: ScheduleInteractorOutputProtocol?
+class CBScheduleInteractor: CBScheduleInteractorProtocol {
+    weak var presenter: CBScheduleInteractorOutputProtocol?
 
     private let dataManager = CBDataManager.shared
     private let notificationManager = CBNotificationManager.shared

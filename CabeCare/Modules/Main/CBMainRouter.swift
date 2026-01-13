@@ -1,5 +1,5 @@
 //
-//  MainRouter.swift
+//  CBMainRouter.swift
 //  CabeCare
 //
 //  Created by Jeri Purnama Maulid on 14/11/25.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class MainRouter {
+class CBMainRouter {
 
     static func createModule() -> UIViewController {
         // Create TabBar module with VIPER architecture
-        return TabBarRouter.createModule()
+        return CBTabBarRouter.createModule()
     }
 }

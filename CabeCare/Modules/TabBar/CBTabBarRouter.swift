@@ -1,5 +1,5 @@
 //
-//  TabBarRouter.swift
+//  CBTabBarRouter.swift
 //  CabeCare
 //
 //  Created by Jeri Purnama Maulid on 14/11/25.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class TabBarRouter: TabBarRouterProtocol {
+class CBTabBarRouter: CBTabBarRouterProtocol {
 
     static func createModule() -> UIViewController {
-        let view = TabBarView()
-        let presenter = TabBarPresenter()
-        let interactor = TabBarInteractor()
-        let router = TabBarRouter()
+        let view = CBTabBarModuleView()
+        let presenter = CBTabBarPresenter()
+        let interactor = CBTabBarInteractor()
+        let router = CBTabBarRouter()
 
         view.presenter = presenter
         presenter.view = view
@@ -23,9 +23,9 @@ class TabBarRouter: TabBarRouterProtocol {
         interactor.presenter = presenter
 
         // Create child view controllers
-        let scheduleVC = ScheduleRouter.createModule()
-        let tipsVC = TipsViewController()
-        let settingsVC = SettingsRouter.createModule()
+        let scheduleVC = CBScheduleRouter.createModule()
+        let tipsVC = CBTipsRouter.createModule()
+        let settingsVC = CBSettingsRouter.createModule()
 
         // Configure tab items
         let tabItems = [

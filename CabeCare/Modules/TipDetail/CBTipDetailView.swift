@@ -1,17 +1,18 @@
 //
-//  TipDetailViewController.swift
+//  TipDetailView.swift
 //  CabeCare
 //
 //  Created by Jeri Purnama Maulid on 14/11/25.
-//  Displays detailed view of a plant care tip
+//  VIPER View for TipDetail Module
 //
 
 import UIKit
 
-class TipDetailViewController: UIViewController {
+class CBTipDetailView: UIViewController {
 
-    private let tip: CBPlantTip
+    var presenter: CBTipDetailPresenterProtocol?
 
+    // MARK: - UI Components
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -73,15 +74,7 @@ class TipDetailViewController: UIViewController {
         return button
     }()
 
-    init(tip: CBPlantTip) {
-        self.tip = tip
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,9 +82,11 @@ class TipDetailViewController: UIViewController {
         view.backgroundColor = .systemBackground
 
         setupUI()
-        populateContent()
+
+        presenter?.viewDidLoad()
     }
 
+    // MARK: - Setup
     private func setupUI() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -137,28 +132,23 @@ class TipDetailViewController: UIViewController {
         ])
     }
 
-    private func populateContent() {
-        titleLabel.text = tip.title
-        contentLabel.text = tip.content
+    // MARK: - Actions
+    @objc private func shareTapped() {
+        presenter?.didTapShare()
+    }
+}
 
-        if let source = tip.source {
+// MARK: - CBTipDetailViewProtocol
+extension CBTipDetailView: CBTipDetailViewProtocol {
+    func showTipDetail(title: String, content: String, source: String?) {
+        titleLabel.text = title
+        contentLabel.text = content
+
+        if let source = source {
             sourceLabel.text = TipDetailLK.sourceLabel.localized(with: ["source": source])
+            sourceLabel.isHidden = false
         } else {
             sourceLabel.isHidden = true
         }
-    }
-
-    @objc private func shareTapped() {
-        let sourceText = tip.source.map { TipDetailLK.sourceLabel.localized(with: ["source": $0]) } ?? ""
-        let text = TipDetailLK.shareTextTemplate.localized(with: [
-            "title": tip.title,
-            "content": tip.content,
-            "source": sourceText
-        ])
-
-        let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-        activityVC.popoverPresentationController?.sourceView = shareButton
-
-        present(activityVC, animated: true)
     }
 }

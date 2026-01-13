@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SettingsView: UIViewController {
+class CBSettingsView: UIViewController {
 
     // MARK: - Properties
-    var presenter: SettingsPresenterProtocol?
+    var presenter: CBSettingsPresenterProtocol?
 
     private var languages: [LanguageEntity] = []
 
@@ -52,9 +52,9 @@ class SettingsView: UIViewController {
     }
 }
 
-// MARK: - SettingsViewProtocol
+// MARK: - CBSettingsViewProtocol
 
-extension SettingsView: SettingsViewProtocol {
+extension CBSettingsView: CBSettingsViewProtocol {
 
     func showLanguageOptions(_ languages: [LanguageEntity]) {
         self.languages = languages
@@ -93,7 +93,7 @@ extension SettingsView: SettingsViewProtocol {
 
 // MARK: - UITableViewDataSource
 
-extension SettingsView: UITableViewDataSource {
+extension CBSettingsView: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -120,7 +120,7 @@ extension SettingsView: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension SettingsView: UITableViewDelegate {
+extension CBSettingsView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

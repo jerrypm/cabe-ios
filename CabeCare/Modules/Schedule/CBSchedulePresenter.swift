@@ -8,10 +8,10 @@
 
 import Foundation
 
-class SchedulePresenter: SchedulePresenterProtocol {
-    weak var view: ScheduleViewProtocol?
-    var interactor: ScheduleInteractorProtocol?
-    var router: ScheduleRouterProtocol?
+class CBSchedulePresenter: CBSchedulePresenterProtocol {
+    weak var view: CBScheduleViewProtocol?
+    var interactor: CBScheduleInteractorProtocol?
+    var router: CBScheduleRouterProtocol?
 
     private var schedules: [CBWateringSchedule] = []
 
@@ -45,7 +45,7 @@ class SchedulePresenter: SchedulePresenterProtocol {
 }
 
 // MARK: - Interactor Output
-extension SchedulePresenter: ScheduleInteractorOutputProtocol {
+extension CBSchedulePresenter: CBScheduleInteractorOutputProtocol {
     func didFetchSchedules(_ schedules: [CBWateringSchedule]) {
         self.schedules = schedules
 

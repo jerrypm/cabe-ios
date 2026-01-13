@@ -10,37 +10,37 @@ import Foundation
 import UIKit
 
 // MARK: - View Protocol
-protocol TabBarViewProtocol: AnyObject {
-    var presenter: TabBarPresenterProtocol? { get set }
+protocol CBTabBarViewProtocol: AnyObject {
+    var presenter: CBTabBarPresenterProtocol? { get set }
 
     func setupTabBar(with viewControllers: [UIViewController], tabItems: [CBTabBarEntity])
     func selectTab(at index: Int)
 }
 
 // MARK: - Presenter Protocol
-protocol TabBarPresenterProtocol: AnyObject {
-    var view: TabBarViewProtocol? { get set }
-    var interactor: TabBarInteractorProtocol? { get set }
-    var router: TabBarRouterProtocol? { get set }
+protocol CBTabBarPresenterProtocol: AnyObject {
+    var view: CBTabBarViewProtocol? { get set }
+    var interactor: CBTabBarInteractorProtocol? { get set }
+    var router: CBTabBarRouterProtocol? { get set }
 
     func viewDidLoad()
     func didSelectTab(at index: Int)
 }
 
 // MARK: - Interactor Protocol
-protocol TabBarInteractorProtocol: AnyObject {
-    var presenter: TabBarInteractorOutputProtocol? { get set }
+protocol CBTabBarInteractorProtocol: AnyObject {
+    var presenter: CBTabBarInteractorOutputProtocol? { get set }
 
     func fetchTabConfiguration()
 }
 
 // MARK: - Interactor Output Protocol
-protocol TabBarInteractorOutputProtocol: AnyObject {
+protocol CBTabBarInteractorOutputProtocol: AnyObject {
     func didFetchTabConfiguration(_ tabs: [CBTabBarEntity])
 }
 
 // MARK: - Router Protocol
-protocol TabBarRouterProtocol: AnyObject {
+protocol CBTabBarRouterProtocol: AnyObject {
     static func createModule() -> UIViewController
 }
 

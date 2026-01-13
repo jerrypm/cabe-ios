@@ -8,18 +8,18 @@
 
 import Foundation
 
-class SettingsInteractor {
+class CBSettingsInteractor {
 
     // MARK: - Properties
-    weak var presenter: SettingsInteractorOutputProtocol?
+    weak var presenter: CBSettingsInteractorOutputProtocol?
 
     private let userDefaults = UserDefaults.standard
     private let languageKey = "AppLanguage"
 }
 
-// MARK: - SettingsInteractorProtocol
+// MARK: - CBSettingsInteractorProtocol
 
-extension SettingsInteractor: SettingsInteractorProtocol {
+extension CBSettingsInteractor: CBSettingsInteractorProtocol {
 
     func fetchAvailableLanguages() {
         let currentLanguageCode = getCurrentLanguageCode()

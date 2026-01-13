@@ -1,23 +1,21 @@
 //
-//  AddScheduleViewController.swift
+//  AddScheduleView.swift
 //  CabeCare
 //
 //  Created by Jeri Purnama Maulid on 14/11/25.
-//  Add or edit watering schedule
+//  VIPER View for AddSchedule Module
 //
 
 import UIKit
 
-protocol AddScheduleDelegate: AnyObject {
-    func didAddSchedule(_ schedule: CBWateringSchedule)
-    func didUpdateSchedule(_ schedule: CBWateringSchedule)
-}
+class CBAddScheduleView: UIViewController {
 
-class AddScheduleViewController: UIViewController {
+    var presenter: CBAddSchedulePresenterProtocol?
 
-    weak var delegate: AddScheduleDelegate?
-    var scheduleToEdit: CBWateringSchedule?
+    private var isEditMode: Bool = false
+    private let intervals = CBWateringSchedule.RepeatInterval.allCases
 
+    // MARK: - UI Components
     private let scrollView: UIScrollView = {
         let scroll = UIScrollView()
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -76,26 +74,31 @@ class AddScheduleViewController: UIViewController {
         return textField
     }()
 
-    private let intervals = CBWateringSchedule.RepeatInterval.allCases
-
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = scheduleToEdit == nil ? AddScheduleLK.screenTitleAdd.localized : AddScheduleLK.screenTitleEdit.localized
         view.backgroundColor = .systemBackground
 
         setupNavigationBar()
         setupUI()
         setupPickerView()
 
-        if let schedule = scheduleToEdit {
-            populateFields(with: schedule)
-        }
+        presenter?.viewDidLoad()
     }
 
+    // MARK: - Setup
     private func setupNavigationBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .cancel,
+            target: self,
+            action: #selector(cancelTapped)
+        )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .save,
+            target: self,
+            action: #selector(saveTapped)
+        )
     }
 
     private func setupUI() {
@@ -154,75 +157,58 @@ class AddScheduleViewController: UIViewController {
         intervalPicker.dataSource = self
     }
 
-    private func populateFields(with schedule: CBWateringSchedule) {
-        plantNameTextField.text = schedule.plantName
-        timePicker.date = schedule.wateringTime
-        notesTextField.text = schedule.notes
+    private func updateTitle() {
+        title = isEditMode ? AddScheduleLK.screenTitleEdit.localized : AddScheduleLK.screenTitleAdd.localized
+    }
 
-        if let index = intervals.firstIndex(of: schedule.repeatInterval) {
+    // MARK: - Actions
+    @objc private func cancelTapped() {
+        presenter?.didTapCancel()
+    }
+
+    @objc private func saveTapped() {
+        let selectedInterval = intervals[intervalPicker.selectedRow(inComponent: 0)]
+        presenter?.didTapSave(
+            plantName: plantNameTextField.text,
+            time: timePicker.date,
+            interval: selectedInterval,
+            notes: notesTextField.text
+        )
+    }
+}
+
+// MARK: - CBAddScheduleViewProtocol
+extension CBAddScheduleView: CBAddScheduleViewProtocol {
+    func showScheduleData(plantName: String, time: Date, interval: CBWateringSchedule.RepeatInterval, notes: String?) {
+        isEditMode = true
+        updateTitle()
+
+        plantNameTextField.text = plantName
+        timePicker.date = time
+        notesTextField.text = notes
+
+        if let index = intervals.firstIndex(of: interval) {
             intervalPicker.selectRow(index, inComponent: 0, animated: false)
         }
     }
 
-    @objc private func cancelTapped() {
-        dismiss(animated: true)
-    }
-
-    @objc private func saveTapped() {
-        guard let plantName = plantNameTextField.text, !plantName.isEmpty else {
-            showAlert(message: CommonLK.plantNameTitle.localized)
-            return
-        }
-
-        let selectedInterval = intervals[intervalPicker.selectedRow(inComponent: 0)]
-        let notes = notesTextField.text
-
-        if let existingSchedule = scheduleToEdit {
-            // Update existing schedule
-            var updatedSchedule = existingSchedule
-            updatedSchedule.plantName = plantName
-            updatedSchedule.wateringTime = timePicker.date
-            updatedSchedule.repeatInterval = selectedInterval
-            updatedSchedule.notes = notes
-
-            // Cancel old notifications
-            CBNotificationManager.shared.cancelWateringNotification(for: existingSchedule)
-
-            // Schedule new notifications
-            CBNotificationManager.shared.scheduleWateringNotification(for: updatedSchedule)
-
-            // Save
-            CBDataManager.shared.updateSchedule(updatedSchedule)
-            delegate?.didUpdateSchedule(updatedSchedule)
-        } else {
-            // Create new schedule
-            let schedule = CBWateringSchedule(
-                plantName: plantName,
-                wateringTime: timePicker.date,
-                repeatInterval: selectedInterval,
-                notes: notes
-            )
-
-            // Schedule notifications
-            CBNotificationManager.shared.scheduleWateringNotification(for: schedule)
-
-            // Save
-            CBDataManager.shared.addSchedule(schedule)
-            delegate?.didAddSchedule(schedule)
-        }
-
-        dismiss(animated: true)
-    }
-
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: CommonLK.warningTitle.localized, message: message, preferredStyle: .alert)
+    func showValidationError(message: String) {
+        let alert = UIAlertController(
+            title: CommonLK.warningTitle.localized,
+            message: message,
+            preferredStyle: .alert
+        )
         alert.addAction(UIAlertAction(title: CommonLK.okButton.localized, style: .default))
         present(alert, animated: true)
+    }
+
+    func dismissView() {
+        dismiss(animated: true)
     }
 }
 
 // MARK: - UIPickerViewDataSource
-extension AddScheduleViewController: UIPickerViewDataSource {
+extension CBAddScheduleView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -233,7 +219,7 @@ extension AddScheduleViewController: UIPickerViewDataSource {
 }
 
 // MARK: - UIPickerViewDelegate
-extension AddScheduleViewController: UIPickerViewDelegate {
+extension CBAddScheduleView: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return intervals[row].rawValue
     }

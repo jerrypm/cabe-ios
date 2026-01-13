@@ -1,5 +1,5 @@
 //
-//  ScheduleRouter.swift
+//  CBScheduleRouter.swift
 //  CabeCare
 //
 //  Created by Jeri Purnama Maulid on 14/11/25.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ScheduleRouter: ScheduleRouterProtocol {
+class CBScheduleRouter: CBScheduleRouterProtocol {
 
     static func createModule() -> UIViewController {
-        let view = ScheduleView()
-        let presenter = SchedulePresenter()
-        let interactor = ScheduleInteractor()
-        let router = ScheduleRouter()
+        let view = CBScheduleView()
+        let presenter = CBSchedulePresenter()
+        let interactor = CBScheduleInteractor()
+        let router = CBScheduleRouter()
 
         view.presenter = presenter
         presenter.view = view
@@ -25,27 +25,27 @@ class ScheduleRouter: ScheduleRouterProtocol {
         return view
     }
 
-    func navigateToAddSchedule(from view: ScheduleViewProtocol?) {
+    func navigateToAddSchedule(from view: CBScheduleViewProtocol?) {
         guard let viewController = view as? UIViewController else { return }
 
-        let addScheduleVC = AddScheduleRouter.createModule(schedule: nil as CBWateringSchedule?, delegate: viewController as? AddScheduleDelegate)
+        let addScheduleVC = CBAddScheduleRouter.createModule(schedule: nil as CBWateringSchedule?, delegate: viewController as? CBAddScheduleDelegate)
         let navController = UINavigationController(rootViewController: addScheduleVC)
 
         viewController.present(navController, animated: true)
     }
 
-    func navigateToEditSchedule(_ schedule: CBWateringSchedule, from view: ScheduleViewProtocol?) {
+    func navigateToEditSchedule(_ schedule: CBWateringSchedule, from view: CBScheduleViewProtocol?) {
         guard let viewController = view as? UIViewController else { return }
 
-        let addScheduleVC = AddScheduleRouter.createModule(schedule: schedule, delegate: viewController as? AddScheduleDelegate)
+        let addScheduleVC = CBAddScheduleRouter.createModule(schedule: schedule, delegate: viewController as? CBAddScheduleDelegate)
         let navController = UINavigationController(rootViewController: addScheduleVC)
 
         viewController.present(navController, animated: true)
     }
 }
 
-// MARK: - AddScheduleDelegate Extension
-extension ScheduleView: AddScheduleDelegate {
+// MARK: - CBAddScheduleDelegate Extension
+extension CBScheduleView: CBAddScheduleDelegate {
     func didAddSchedule(_ schedule: CBWateringSchedule) {
         presenter?.viewWillAppear()
     }

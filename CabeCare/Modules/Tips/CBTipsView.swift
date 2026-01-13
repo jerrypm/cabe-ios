@@ -1,18 +1,20 @@
 //
-//  TipsViewController.swift
+//  TipsView.swift
 //  CabeCare
 //
 //  Created by Jeri Purnama Maulid on 14/11/25.
-//  Browse and search plant care tips
+//  VIPER View for Tips Module
 //
 
 import UIKit
 
-class TipsViewController: UIViewController {
+class CBTipsView: UIViewController {
 
-    private var allTips: [CBPlantTip] = []
-    private var displayedTips: [CBPlantTip] = []
+    var presenter: CBTipsPresenterProtocol?
 
+    private var tips: [CBPlantTip] = []
+
+    // MARK: - UI Components
     private let searchController: UISearchController = {
         let controller = UISearchController(searchResultsController: nil)
         controller.searchBar.placeholder = TipsLandingLK.searchPlaceholder.localized
@@ -42,6 +44,44 @@ class TipsViewController: UIViewController {
         return button
     }()
 
+    private lazy var emptyStateView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+
+        let imageView = UIImageView(image: UIImage(systemName: "lightbulb"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .systemGray3
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let label = UILabel()
+        label.text = TipsLandingLK.emptyStateMessage.localized
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(imageView)
+        view.addSubview(label)
+
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            imageView.widthAnchor.constraint(equalToConstant: 80),
+            imageView.heightAnchor.constraint(equalToConstant: 80),
+
+            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        ])
+
+        return view
+    }()
+
+    private var loadingAlert: UIAlertController?
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,9 +90,11 @@ class TipsViewController: UIViewController {
 
         setupSearchController()
         setupUI()
-        loadTips()
+
+        presenter?.viewDidLoad()
     }
 
+    // MARK: - Setup
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -64,6 +106,7 @@ class TipsViewController: UIViewController {
     private func setupUI() {
         view.addSubview(searchButton)
         view.addSubview(tableView)
+        view.addSubview(emptyStateView)
 
         NSLayoutConstraint.activate([
             searchButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -74,30 +117,22 @@ class TipsViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: searchButton.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+            emptyStateView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            emptyStateView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            emptyStateView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyStateView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 
-    private func loadTips() {
-        // Load predefined tips
-        allTips = CBTipsSearchManager.shared.getAllTips()
-
-        // Load saved tips from storage
-        let savedTips = CBDataManager.shared.loadTips()
-
-        // Combine and remove duplicates
-        for savedTip in savedTips {
-            if !allTips.contains(where: { $0.id == savedTip.id }) {
-                allTips.insert(savedTip, at: 0)
-            }
-        }
-
-        displayedTips = allTips
-        tableView.reloadData()
-    }
-
+    // MARK: - Actions
     @objc private func searchOnlineTapped() {
-        let alert = UIAlertController(title: TipsAlertLK.addTipAlertTitle.localized, message: TipsAlertLK.addTipAlertMessage.localized, preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: TipsAlertLK.addTipAlertTitle.localized,
+            message: TipsAlertLK.addTipAlertMessage.localized,
+            preferredStyle: .alert
+        )
 
         alert.addTextField { textField in
             textField.placeholder = TipsLandingLK.searchQueryPlaceholder.localized
@@ -106,82 +141,78 @@ class TipsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: CommonLK.cancelButton.localized, style: .cancel))
         alert.addAction(UIAlertAction(title: TipsAlertLK.searchButton.localized, style: .default) { [weak self] _ in
             guard let query = alert.textFields?.first?.text, !query.isEmpty else { return }
-            self?.performOnlineSearch(query: query)
+            self?.presenter?.performOnlineSearch(query: query)
         })
 
         present(alert, animated: true)
     }
+}
 
-    private func performOnlineSearch(query: String) {
-        // Show loading indicator
-        let loadingAlert = UIAlertController(title: CommonLK.loading.localized, message: TipsAlertLK.loadingMessage.localized, preferredStyle: .alert)
-        present(loadingAlert, animated: true)
+// MARK: - CBTipsViewProtocol
+extension CBTipsView: CBTipsViewProtocol {
+    func showTips(_ tips: [CBPlantTip]) {
+        self.tips = tips
+        tableView.reloadData()
+    }
 
-        // Search for tips
-        CBTipsSearchManager.shared.searchTips(query: query) { [weak self] tips in
-            guard let self = self else { return }
+    func showEmptyState() {
+        emptyStateView.isHidden = false
+    }
 
-            // Dismiss loading alert
-            loadingAlert.dismiss(animated: true) {
-                if tips.isEmpty {
-                    self.showAlert(title: TipsAlertLK.notFoundTitle.localized, message: TipsAlertLK.notFoundMessage.localized)
-                } else {
-                    // Save first tip and send notification
-                    let firstTip = tips[0]
-                    CBDataManager.shared.addTip(firstTip)
-                    CBNotificationManager.shared.sendTipNotification(tip: firstTip)
+    func hideEmptyState() {
+        emptyStateView.isHidden = true
+    }
 
-                    // Reload tips
-                    self.loadTips()
-
-                    // Show result
-                    self.showAlert(title: TipsAlertLK.tipAddedSuccessMessage.localized, message: TipsAlertLK.tipAddedWithNotificationMessage.localized)
-                }
-            }
+    func showLoading() {
+        loadingAlert = UIAlertController(
+            title: CommonLK.loading.localized,
+            message: TipsAlertLK.loadingMessage.localized,
+            preferredStyle: .alert
+        )
+        if let alert = loadingAlert {
+            present(alert, animated: true)
         }
     }
 
-    private func showAlert(title: String, message: String) {
+    func hideLoading() {
+        loadingAlert?.dismiss(animated: true)
+        loadingAlert = nil
+    }
+
+    func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: CommonLK.okButton.localized, style: .default))
         present(alert, animated: true)
     }
 
-    private func filterTips(with searchText: String) {
-        if searchText.isEmpty {
-            displayedTips = allTips
-        } else {
-            displayedTips = allTips.filter { tip in
-                tip.title.lowercased().contains(searchText.lowercased()) ||
-                tip.content.lowercased().contains(searchText.lowercased())
-            }
-        }
+    func reloadData() {
         tableView.reloadData()
     }
 }
 
 // MARK: - UITableViewDataSource
-extension TipsViewController: UITableViewDataSource {
+extension CBTipsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedTips.count
+        return tips.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TipsConstants.CellIdentifier.tipCell.value, for: indexPath) as! CBTipCell
-        let tip = displayedTips[indexPath.row]
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: TipsConstants.CellIdentifier.tipCell.value,
+            for: indexPath
+        ) as! CBTipCell
+        let tip = tips[indexPath.row]
         cell.configure(with: tip)
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
-extension TipsViewController: UITableViewDelegate {
+extension CBTipsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-        let tip = displayedTips[indexPath.row]
-        let detailVC = TipDetailViewController(tip: tip)
-        navigationController?.pushViewController(detailVC, animated: true)
+        let tip = tips[indexPath.row]
+        presenter?.didSelectTip(tip)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -194,9 +225,9 @@ extension TipsViewController: UITableViewDelegate {
 }
 
 // MARK: - UISearchResultsUpdating
-extension TipsViewController: UISearchResultsUpdating {
+extension CBTipsView: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
-        filterTips(with: searchText)
+        presenter?.didSearchTips(with: searchText)
     }
 }

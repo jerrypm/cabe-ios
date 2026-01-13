@@ -8,10 +8,10 @@
 
 import UIKit
 
-class TabBarView: UIViewController {
+class CBTabBarModuleView: UIViewController {
 
     // MARK: - Properties
-    var presenter: TabBarPresenterProtocol?
+    var presenter: CBTabBarPresenterProtocol?
 
     private var viewControllers: [UIViewController] = []
     private var selectedIndex: Int = 0 {
@@ -21,9 +21,9 @@ class TabBarView: UIViewController {
     }
 
     private let customTabBar: CBTabBarView = {
-        let view = CBTabBarView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let tabBar = CBTabBarView()
+        tabBar.translatesAutoresizingMaskIntoConstraints = false
+        return tabBar
     }()
 
     private let contentContainerView: UIView = {
@@ -108,9 +108,9 @@ class TabBarView: UIViewController {
     }
 }
 
-// MARK: - TabBarViewProtocol
+// MARK: - CBTabBarViewProtocol
 
-extension TabBarView: TabBarViewProtocol {
+extension CBTabBarModuleView: CBTabBarViewProtocol {
 
     func setupTabBar(with viewControllers: [UIViewController], tabItems: [CBTabBarEntity]) {
         self.viewControllers = viewControllers
@@ -131,7 +131,7 @@ extension TabBarView: TabBarViewProtocol {
 
 // MARK: - CBTabBarViewDelegate
 
-extension TabBarView: CBTabBarViewDelegate {
+extension CBTabBarModuleView: CBTabBarViewDelegate {
     func didSelectTab(at index: Int) {
         presenter?.didSelectTab(at: index)
     }

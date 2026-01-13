@@ -8,15 +8,15 @@
 
 import Foundation
 
-class TabBarInteractor {
+class CBTabBarInteractor {
 
     // MARK: - Properties
-    weak var presenter: TabBarInteractorOutputProtocol?
+    weak var presenter: CBTabBarInteractorOutputProtocol?
 }
 
-// MARK: - TabBarInteractorProtocol
+// MARK: - CBTabBarInteractorProtocol
 
-extension TabBarInteractor: TabBarInteractorProtocol {
+extension CBTabBarInteractor: CBTabBarInteractorProtocol {
 
     func fetchTabConfiguration() {
         // Return tab configuration

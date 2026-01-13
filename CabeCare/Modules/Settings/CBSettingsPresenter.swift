@@ -8,17 +8,17 @@
 
 import Foundation
 
-class SettingsPresenter {
+class CBSettingsPresenter {
 
     // MARK: - Properties
-    weak var view: SettingsViewProtocol?
-    var interactor: SettingsInteractorProtocol?
-    var router: SettingsRouterProtocol?
+    weak var view: CBSettingsViewProtocol?
+    var interactor: CBSettingsInteractorProtocol?
+    var router: CBSettingsRouterProtocol?
 }
 
-// MARK: - SettingsPresenterProtocol
+// MARK: - CBSettingsPresenterProtocol
 
-extension SettingsPresenter: SettingsPresenterProtocol {
+extension CBSettingsPresenter: CBSettingsPresenterProtocol {
 
     func viewDidLoad() {
         interactor?.fetchAvailableLanguages()
@@ -29,9 +29,9 @@ extension SettingsPresenter: SettingsPresenterProtocol {
     }
 }
 
-// MARK: - SettingsInteractorOutputProtocol
+// MARK: - CBSettingsInteractorOutputProtocol
 
-extension SettingsPresenter: SettingsInteractorOutputProtocol {
+extension CBSettingsPresenter: CBSettingsInteractorOutputProtocol {
 
     func didFetchLanguages(_ languages: [LanguageEntity]) {
         view?.showLanguageOptions(languages)

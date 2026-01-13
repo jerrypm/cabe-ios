@@ -10,26 +10,26 @@ import Foundation
 import UIKit
 
 // MARK: - View Protocol
-protocol SettingsViewProtocol: AnyObject {
-    var presenter: SettingsPresenterProtocol? { get set }
+protocol CBSettingsViewProtocol: AnyObject {
+    var presenter: CBSettingsPresenterProtocol? { get set }
 
     func showLanguageOptions(_ languages: [LanguageEntity])
     func updateSelectedLanguage(_ language: LanguageEntity)
 }
 
 // MARK: - Presenter Protocol
-protocol SettingsPresenterProtocol: AnyObject {
-    var view: SettingsViewProtocol? { get set }
-    var interactor: SettingsInteractorProtocol? { get set }
-    var router: SettingsRouterProtocol? { get set }
+protocol CBSettingsPresenterProtocol: AnyObject {
+    var view: CBSettingsViewProtocol? { get set }
+    var interactor: CBSettingsInteractorProtocol? { get set }
+    var router: CBSettingsRouterProtocol? { get set }
 
     func viewDidLoad()
     func didSelectLanguage(_ language: LanguageEntity)
 }
 
 // MARK: - Interactor Protocol
-protocol SettingsInteractorProtocol: AnyObject {
-    var presenter: SettingsInteractorOutputProtocol? { get set }
+protocol CBSettingsInteractorProtocol: AnyObject {
+    var presenter: CBSettingsInteractorOutputProtocol? { get set }
 
     func fetchAvailableLanguages()
     func getCurrentLanguage() -> LanguageEntity
@@ -37,14 +37,14 @@ protocol SettingsInteractorProtocol: AnyObject {
 }
 
 // MARK: - Interactor Output Protocol
-protocol SettingsInteractorOutputProtocol: AnyObject {
+protocol CBSettingsInteractorOutputProtocol: AnyObject {
     func didFetchLanguages(_ languages: [LanguageEntity])
     func didSaveLanguage(_ language: LanguageEntity)
     func didFailWithError(_ error: Error)
 }
 
 // MARK: - Router Protocol
-protocol SettingsRouterProtocol: AnyObject {
+protocol CBSettingsRouterProtocol: AnyObject {
     static func createModule() -> UIViewController
 }
 
